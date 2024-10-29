@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-10-28 11:13:54" Modified_Date="2024-10-29 17:39:25" Creator="svelderr" Comments="" ID="d8e8c96e4fa0148efef66d1cf3fc56ef">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-10-28 11:13:54" Modified_Date="2024-10-29 18:11:37" Creator="svelderr" Comments="" ID="f76792bfc079e5067eab3b9966a87b24">
   <Library_General_Settings>
     <Package_File_Name>NI_lib_Icon_editor_dev_environment_2021</Package_File_Name>
-    <Library_Version>1.0.1.10</Library_Version>
+    <Library_Version>1.0.1.12</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\resource\plugins</Library_Source_Folder>
     <Library_Output_Folder>build</Library_Output_Folder>
@@ -107,12 +107,6 @@
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
       </Destination_Overrides>
-      <Destination_Overrides>
-        <Path>lv_icon.lvlibp</Path>
-        <Destination>0</Destination>
-        <Additional_Destination>true</Additional_Destination>
-        <Additional_Destination_Index>0</Additional_Destination_Index>
-      </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
         <Password/>
@@ -127,11 +121,17 @@
         <Path>NIIconEditor</Path>
       </Exclusions>
       <Exclusions>
-        <Path>lv_icon.lvleibp</Path>
+        <Path>lv_icon.vi</Path>
       </Exclusions>
-      <Compile_Exclusions>
-        <Path>lv_icon.lvlibp</Path>
-      </Compile_Exclusions>
+      <Exclusions>
+        <Path>lv_icon.vit</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>lv_IconEditor.lvlib</Path>
+      </Exclusions>
+      <Exclusions>
+        <Path>SAMPLE_lv_icon.vi</Path>
+      </Exclusions>
       <Compile_Exclusions>
         <Path>.</Path>
       </Compile_Exclusions>
@@ -191,7 +191,7 @@
       <LV_64-Bit>false</LV_64-Bit>
     </Install_Requirements>
     <LabVIEW>
-      <close_labview_before_install>false</close_labview_before_install>
+      <close_labview_before_install>true</close_labview_before_install>
       <restart_labview_after_install>true</restart_labview_after_install>
       <skip_mass_compile_after_install>true</skip_mass_compile_after_install>
       <install_into_global_environment>false</install_into_global_environment>
