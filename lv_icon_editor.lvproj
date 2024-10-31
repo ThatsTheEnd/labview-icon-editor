@@ -114,8 +114,8 @@
 						<Item Name="PixelValue.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Draw/PixelValue.vi"/>
 					</Item>
 					<Item Name="Font" Type="Folder">
-						<Item Name="Linux.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Font/Linux.vi"/>
-						<Item Name="Mac.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Font/Mac.vi"/>
+						<Item Name="Linux.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Font/Linux.vi"/>
+						<Item Name="Mac.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Font/Mac.vi"/>
 						<Item Name="Populate Font Control.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Font/Populate Font Control.vi"/>
 						<Item Name="Windows.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Font/Windows.vi"/>
 					</Item>
@@ -155,7 +155,6 @@
 						<Item Name="Icon Editor Properties Help.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Icon Editor/Icon Editor Properties Help.vi"/>
 						<Item Name="Icon Initialization.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/Icon Initialization.vi"/>
 						<Item Name="IE Save dialog build path.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/IE Save dialog build path.vi"/>
-						<Item Name="IE Default UI.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/IE Default UI.vi"/>
 						<Item Name="Keep IE in Memory.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Icon Editor/Keep IE in Memory.vi"/>
 						<Item Name="LayerCluster_ValueChange.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/LayerCluster_ValueChange.vi"/>
 						<Item Name="MenuSelection(User).vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/MenuSelection(User).vi"/>
@@ -179,11 +178,11 @@
 						<Item Name="Value Change_Top or Bottom Layer.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/Value Change_Top or Bottom Layer.vi"/>
 					</Item>
 					<Item Name="Key Down Up" Type="Folder">
-						<Item Name="Key Down Up Layers.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Key Down Up/Key Down Up Layers.vi"/>
+						<Item Name="Key Down Up Layers.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Key Down Up/Key Down Up Layers.vi"/>
 						<Item Name="KeyDown.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Key Down Up/KeyDown.vi"/>
 						<Item Name="KeyUp.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Key Down Up/KeyUp.vi"/>
 						<Item Name="Move Selected Layers.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Key Down Up/Move Selected Layers.vi"/>
-						<Item Name="Process Active Data Shift Key.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Key Down Up/Process Active Data Shift Key.vi"/>
+						<Item Name="Process Active Data Shift Key.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Key Down Up/Process Active Data Shift Key.vi"/>
 					</Item>
 					<Item Name="Layer" Type="Folder">
 						<Item Name="DeleteLayer.vi" Type="VI" URL="../resource/plugins/NIIconEditor/Miscellaneous/Layer/DeleteLayer.vi"/>
@@ -460,7 +459,6 @@
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="lveventtype.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/lveventtype.ctl"/>
-				<Item Name="LVKeyNavTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVKeyNavTypeDef.ctl"/>
 				<Item Name="LVPoint32TypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPoint32TypeDef.ctl"/>
 				<Item Name="LVPositionTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVPositionTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
@@ -613,6 +611,8 @@
 				<Item Name="7842910552F72B45FFAA5B67DFEBCBC5Strip Path Extension - Path__ogtk.vi" Type="VI" URL="/&lt;vilib&gt;/addons/_JKI Toolkits/_Caraya_internal_deps/7842910552F72B45FFAA5B67DFEBCBC5Strip Path Extension - Path__ogtk.vi"/>
 				<Item Name="Find First Error.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Find First Error.vi"/>
 				<Item Name="Librarian Get Info.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Librarian Get Info.vi"/>
+				<Item Name="Trim Whitespace One-Sided.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace One-Sided.vi"/>
+				<Item Name="LVKeyNavTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVKeyNavTypeDef.ctl"/>
 			</Item>
 			<Item Name="Add dev dist if present.vi" Type="VI" URL="../Tooling/support/Add dev dist if present.vi"/>
 			<Item Name="Advapi32.dll" Type="Document" URL="Advapi32.dll">
@@ -653,7 +653,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Tooling/Pre Build Icon Editor PPL.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C699D48A-6A0A-4A55-BF6A-D6FC254001CD}</Property>
-				<Property Name="Bld_version.build" Type="Int">28</Property>
+				<Property Name="Bld_version.build" Type="Int">29</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">lv_icon.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../resource/plugins/lv_icon.lvlibp</Property>
@@ -665,7 +665,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{7BA841BB-E41F-4978-8728-3B5A1ADF45C4}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E7BF26F9-60DF-4B17-8FB3-CDCDF19E75CF}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/resource\/plugins/lv_icon.lvlib</Property>
@@ -706,13 +706,9 @@
 				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[16].type" Type="Str">Container</Property>
 				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Icon Editor/IE Default UI.vi</Property>
+				<Property Name="Source[17].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Graphics/LoadGraphics.vi</Property>
 				<Property Name="Source[17].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[17].type" Type="Str">VI</Property>
-				<Property Name="Source[18].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[18].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Graphics/LoadGraphics.vi</Property>
-				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[18].type" Type="Str">VI</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib</Property>
 				<Property Name="Source[2].Library.allowMissingMembers" Type="Bool">true</Property>
@@ -746,7 +742,7 @@
 				<Property Name="Source[9].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Set VI Icon.vi</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">19</Property>
+				<Property Name="SourceCount" Type="Int">18</Property>
 				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Icon Editor Packed Library</Property>
 				<Property Name="TgtF_internalName" Type="Str">Icon Editor Packed Library</Property>
