@@ -312,7 +312,6 @@
 			<Item Name="lv_icon.lvlib" Type="Library" URL="../vi.lib/LabVIEW Icon API/lv_icon/lv_icon.lvlib"/>
 			<Item Name="lv_icon.vit" Type="VI" URL="/&lt;resource&gt;/plugins/lv_icon.vit"/>
 			<Item Name="lv_IconEditor.lvlib" Type="Library" URL="../resource/plugins/lv_IconEditor.lvlib"/>
-			<Item Name="SAMPLE_lv_icon.vi" Type="VI" URL="../resource/plugins/SAMPLE_lv_icon.vi"/>
 		</Item>
 		<Item Name="Tooling" Type="Folder">
 			<Item Name="support" Type="Folder">
@@ -652,7 +651,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Tooling/Pre Build Icon Editor PPL.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C699D48A-6A0A-4A55-BF6A-D6FC254001CD}</Property>
-				<Property Name="Bld_version.build" Type="Int">32</Property>
+				<Property Name="Bld_version.build" Type="Int">33</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">lv_icon.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../resource/plugins/lv_icon.lvlibp</Property>
@@ -841,7 +840,7 @@
 				<Property Name="Source[21].newName" Type="Str">IE Default UI.vi</Property>
 				<Property Name="Source[21].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[21].type" Type="Str">VI</Property>
-				<Property Name="Source[22].itemID" Type="Ref">/My Computer/resource\/plugins/lv_icon.lvlib/IE Default UI2 IE Mem.vi</Property>
+				<Property Name="Source[22].itemID" Type="Ref"></Property>
 				<Property Name="Source[22].newName" Type="Str">IE Default UI2 IE Mem.vi</Property>
 				<Property Name="Source[22].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[22].type" Type="Str">VI</Property>

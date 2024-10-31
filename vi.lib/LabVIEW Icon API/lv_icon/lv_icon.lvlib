@@ -60,7 +60,8 @@
 		<Item Name="Write Icon Data to Library.vi" Type="VI" URL="../Support/Write Icon Data to Library.vi"/>
 		<Item Name="Write Icon Data to VI.vi" Type="VI" URL="../Support/Write Icon Data to VI.vi"/>
 	</Item>
+	<Item Name="IE Custom UI1.vi" Type="VI" URL="../../../../resource/plugins/IE Custom UI1.vi"/>
 	<Item Name="IE Default UI.vi" Type="VI" URL="../../../../resource/plugins/IE Default UI.vi"/>
-	<Item Name="IE Default UI2 IE Mem.vi" Type="VI" URL="../../../../resource/plugins/IE Default UI2 IE Mem.vi"/>
 	<Item Name="lv_icon.vi" Type="VI" URL="../../../../resource/plugins/lv_icon.vi"/>
+	<Item Name="SAMPLE_lv_icon.vi" Type="VI" URL="../../../../resource/plugins/SAMPLE_lv_icon.vi"/>
 </Library>
