@@ -1,6 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="21008000">
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -12,14 +13,16 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Working" Type="Folder">
+		<Item Name="Support" Type="Folder">
+			<Item Name="Source code root file path.vi" Type="VI" URL="../Source code root file path.vi"/>
 			<Item Name="LabVIEW version.vi" Type="VI" URL="../LabVIEW version.vi"/>
+		</Item>
+		<Item Name="Actions" Type="Folder">
 			<Item Name="Build the ppl.vi" Type="VI" URL="../Build the ppl.vi"/>
 			<Item Name="Create VIPC from folder.vi" Type="VI" URL="../Create VIPC from folder.vi"/>
-			<Item Name="Source code root file path.vi" Type="VI" URL="../Source code root file path.vi"/>
 			<Item Name="Create new VIP.vi" Type="VI" URL="../Create new VIP.vi"/>
 		</Item>
-		<Item Name="test.lvlib" Type="Library" URL="../test/test.lvlib"/>
+		<Item Name="Build all.vi" Type="VI" URL="../Build all.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="1D Array to String__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/1D Array to String__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi"/>
@@ -189,7 +192,7 @@
 				<Property Name="Source[0].itemID" Type="Str">{C117840B-0B75-4269-A155-ED413836D1B9}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/test.lvlib</Property>
+				<Property Name="Source[1].itemID" Type="Ref"></Property>
 				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
