@@ -24,7 +24,7 @@
 			<Item Name="Build the ppl.vi" Type="VI" URL="../Build the ppl.vi"/>
 			<Item Name="Create VIPC from folder.vi" Type="VI" URL="../Create VIPC from folder.vi"/>
 			<Item Name="Create new VIP.vi" Type="VI" URL="../Create new VIP.vi"/>
-			<Item Name="Git sandbox.vi" Type="VI" URL="../Git sandbox.vi"/>
+			<Item Name="Commit all build changes.vi" Type="VI" URL="../Commit all build changes.vi"/>
 		</Item>
 		<Item Name="Build all.vi" Type="VI" URL="../Build all.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -136,6 +136,7 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
+				<Item Name="String to 1D Array__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/String to 1D Array__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi"/>
 			</Item>
 			<Item Name="AB_UI_Change_Path_from_Label.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/AppBuilder/AB_UI_Change_Path_from_Label.vi"/>
 			<Item Name="CDK_GLOBAL_STRINGS.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_GLOBAL_STRINGS.vi"/>
