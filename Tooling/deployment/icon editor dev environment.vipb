@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-10-28 11:13:54" Modified_Date="2024-11-01 12:39:09" Creator="svelderr" Comments="" ID="fdc567980dd5558ec1b77b5cba92503f">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-10-28 11:13:54" Modified_Date="2024-11-01 21:32:51" Creator="svelderr" Comments="" ID="5d4b630817c669978441d08cd7c5092a">
   <Library_General_Settings>
     <Package_File_Name>NI_lib_Icon_editor_dev_environment_2021</Package_File_Name>
-    <Library_Version>1.2.0.24</Library_Version>
+    <Library_Version>1.2.0.29</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\..\resource\plugins</Library_Source_Folder>
     <Library_Output_Folder>build</Library_Output_Folder>
@@ -32,7 +32,7 @@
       <Copyright/>
       <Packager>Sergio Velderrain</Packager>
       <URL/>
-      <Release_Notes>Added harness documentation to the front panel</Release_Notes>
+      <Release_Notes>This release has been automatically generated</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -337,7 +337,7 @@
         <Path>..\..\resource\plugins\SAMPLE_lv_icon.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>8047B600E00DE59055B8ED645774B827</GUID>
+      <GUID>FA629BFC6CC07E3F111D9A32B06266B9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -498,7 +498,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Launch Icon Editor From String.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>48F08E3BF54544C5F4C40F6164607094</GUID>
+      <GUID>8676254AC099910E3673B39CDCAA5BCA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -589,7 +589,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Tools</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E2B4BDD92804C391FE787580DE39809F</GUID>
+      <GUID>F98B28AB50F687653C686FB593630342</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -624,7 +624,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Global Variables\Data.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>59B71E531675E517D2BD032060E65323</GUID>
+      <GUID>DA514B72F3BE30AC45B1495D5FFE2F2F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -1373,7 +1373,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Write Error to File.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FC7BB4D53B8E6AD17286F65B4FDEDCF7</GUID>
+      <GUID>F917C3D220B8AC2A056D55D87EDFB3DF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -1576,7 +1576,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Support\Keep ApplyLib in Memory.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B8AA631B795281F0E3666DF11DD285AE</GUID>
+      <GUID>BD38A32841A8AC5E242A54F5F849403E</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -1625,7 +1625,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\User Dialogs\IconEditorSettings.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9E3337B87616D763B5B19C9879331DB0</GUID>
+      <GUID>6BD688C5A580339CCE745EC4CF9F77DA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -1688,7 +1688,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Ants\Misc</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E605AE9E8BEB8D1891C33113B54A4825</GUID>
+      <GUID>499794D2DF36BFF36DA25FE094A66DBB</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -1779,7 +1779,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\ToMoreSpecificClass</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A7ACE9F7C4A6B530E537AECE3BF65B33</GUID>
+      <GUID>7D9A6FC0EB9A9ABADB1C4FDBC5A4DF89</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -1856,7 +1856,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Icon Library\SET</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E67162C5FBA6922AE753E6BAAC6233B4</GUID>
+      <GUID>39218CAC6E77BDD222CFB5CCB17C31F4</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -1919,7 +1919,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Settings\SET</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B16430E67D49A3DECFB97B7937F50B8E</GUID>
+      <GUID>7AD18EAF4F394EF903BA15A7685338D8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>2</Parent_Palette_Index>
@@ -2108,7 +2108,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Tools\Selection.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>DC447C0CCC84196FCB4A641C5CBF0380</GUID>
+      <GUID>752CC2966E8FB5EB9EB25D5B219C9EF4</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>7</Parent_Palette_Index>
@@ -2199,7 +2199,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Ants\GET\GET_Picture.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B6B8C59C64C54F1A65E147BE59EF8120</GUID>
+      <GUID>23CDC2033B5656DCC78EB8166973092E</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>7</Parent_Palette_Index>
@@ -2234,7 +2234,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Ants\Initialization\Ants Initialization.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>8709A958EDB944A2AC76024139873066</GUID>
+      <GUID>A0E815AAF4D17D9245D919AE263ADAC5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>7</Parent_Palette_Index>
@@ -2297,7 +2297,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Ants\Misc\RunningAnts.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A7575D8CE2415F6D4F23887BD76EA2A2</GUID>
+      <GUID>D71F00431905BA199FA0C8BEC74E8000</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>8</Parent_Palette_Index>
@@ -2402,7 +2402,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\GET\GET_SupportData.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2E178700D6A2F1DAFD3E0D8DA3B7BFE2</GUID>
+      <GUID>E46EEF8B76C03D04BBBE5A7281C65FAF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>8</Parent_Palette_Index>
@@ -2465,7 +2465,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\Initialization\SetActiveData_LoadedFromVI.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>826F330E62C0DD143CA0D4D1313328E3</GUID>
+      <GUID>C0245776CA33C0821D0186C9664EC036</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>8</Parent_Palette_Index>
@@ -2682,7 +2682,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\Misc\UpdateVisibleData.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>03F8C663B6E102C0A1E2C9AF4A15094B</GUID>
+      <GUID>D35F14FF68FD76DC7F7B89CE556A1666</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>8</Parent_Palette_Index>
@@ -2745,7 +2745,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\SET\SET_ScrollbarPosition.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C73F1F9C45F7DA6483C550C90E42C315</GUID>
+      <GUID>D716EADCAEA7FF286E1695BBFD48876B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>8</Parent_Palette_Index>
@@ -2780,7 +2780,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\FakedArray\ToMoreSpecificClass\ClusterRef_2_DisplayTemplatesRef.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>394ABAD6E33814340AF751E61396E6BE</GUID>
+      <GUID>198B97A3EC4315ACB7053C52B2152DBD</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>9</Parent_Palette_Index>
@@ -2829,7 +2829,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Icon Library\GET\GET_Glyphs [].vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D4E6FDE72013BB24E01B974A7656565A</GUID>
+      <GUID>EC58BF860F4F9DF8DF180A143ECA935B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>9</Parent_Palette_Index>
@@ -2864,7 +2864,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Icon Library\Initialization\Glyphs Initialization.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CD9CEA8AE309C0BBB2CC7646F9256081</GUID>
+      <GUID>364160EBC6F39B527F020952D78AA4EC</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>9</Parent_Palette_Index>
@@ -2913,7 +2913,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Icon Library\Misc\SearchGlyphs.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>08A4850130BD2663655DD0CE66A02AB7</GUID>
+      <GUID>6593E3A4F017E88100D4F5E723952284</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>9</Parent_Palette_Index>
@@ -2962,7 +2962,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Icon Library\SET\SET_Glyphs [].vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>071DAB576AC1885E370D3FB365655C50</GUID>
+      <GUID>3B7E23417183A373BCE24BA4F6D0F330</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>10</Parent_Palette_Index>
@@ -3039,7 +3039,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Settings\GET\GET_Text.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>383DB766126084616CAA081D60A54ED9</GUID>
+      <GUID>2E4E3E894C2C20381491FCC907E94609</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>10</Parent_Palette_Index>
@@ -3074,7 +3074,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Settings\Initialization\Settings Initialization.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>221591EE083239CE8372189C41E3B285</GUID>
+      <GUID>B539D59CCF6497722CFC8EB90EA36358</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>10</Parent_Palette_Index>
@@ -3151,7 +3151,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Settings\SET\SET_Text.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>CBA85115BDC5B948E0A5A153BBA32685</GUID>
+      <GUID>55DE1B8D397B1CD9A05A3D4CAB91B1AA</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>11</Parent_Palette_Index>
@@ -3186,7 +3186,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Tools\GET\GET_ActiveTool.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C2A2009EB845CD460D55E7BDFBFB231A</GUID>
+      <GUID>E419E21184972A2483BB0FEBE8A89D8F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>11</Parent_Palette_Index>
@@ -3221,7 +3221,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Tools\Misc\DoubleClick.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>987CD8E2390A7DD63B5BD5B6AB2C6E94</GUID>
+      <GUID>3C146A081323B3A96790A44E71C0C6D5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>11</Parent_Palette_Index>
@@ -3256,7 +3256,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Class\Tools\SET\SET_ActiveTool.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>523634409CB063296AFB082AF129C754</GUID>
+      <GUID>49A32FA5887F3E3A5194791FAA59FCFF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3305,7 +3305,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Clipboard\IE Write to Clipboard.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>ACE44F962B81B83F5D7EB085C02F5EF8</GUID>
+      <GUID>372F8740EE10164057B6AC80226DDA16</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3340,7 +3340,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Def FP Updates\Defer_FP_Updates.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>27481807F8E357E277101049DE942A5A</GUID>
+      <GUID>FAAD088CB2AE9FEB2A9A2CE88470AC2D</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3445,7 +3445,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Draw\PixelValue.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1FDA93BE251177A90078D43E126B0FF2</GUID>
+      <GUID>B5940B6A512EE552A012A6CBB472493F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3522,7 +3522,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Font\Windows.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3D13053D0C52F69CD81243EF8B5D049E</GUID>
+      <GUID>BE4B47E038DBBB2DF0BDE2AC2749CE19</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3627,7 +3627,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Glyphs\TemporaryGlyphView.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>A18C0B0D6D3F6FAA93F2B7E54F19D8A1</GUID>
+      <GUID>A98850138C5382FBB2925EE0CBF23888</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -3788,7 +3788,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Graphics\Pull data from disc.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7F8D1DD827A6F2B36F7431871EFDF806</GUID>
+      <GUID>92A6F42EFC6E86FAE2BA64BB914E0DA6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4313,7 +4313,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Icon Editor\Value Change_Top or Bottom Layer.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7CFF0FFDE3F974A1F835D6321FA2D248</GUID>
+      <GUID>443C878BB78EF6DD91A9514C69630A09</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4404,7 +4404,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Key Down Up\Process Active Data Shift Key.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2A51CF3D7BEF0D93FE1FFC56A6186D2B</GUID>
+      <GUID>D2B04BAA75A8105D71DE5649C6569B1B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4509,7 +4509,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Layer\ViewLayer.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>179F01246FD0715B7332FC85A01A51F0</GUID>
+      <GUID>A63EB80744C7BC41EF8614401E8AC4F3</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4768,7 +4768,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Load Unload\WriteDataToLabVIEWINI.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D5BA1A2519966FCCD45E81273317220C</GUID>
+      <GUID>14C5B2B513F8897F2615A5A01AFBF03F</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4831,7 +4831,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Menubar\ShowTerminals.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4E85D442A7D04B3375C7FA8C908F026A</GUID>
+      <GUID>CA0798654347103397DF3595016A0978</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -4992,7 +4992,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\ni.com_iconlibrary\ResolveURLbyUsingInfoCode.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C29480B01FC5AC97B853A2377FE51279</GUID>
+      <GUID>FAAAC687D426DAAAC44296B41C7597DE</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -5125,7 +5125,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Tools\WriteText.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E693253B9EED74783E00F95981821792</GUID>
+      <GUID>199742DE55F6E6E8141B03F24007074B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -5216,7 +5216,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\Undo Redo\Wrap.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D42599CDA5E870C8320C588940236A32</GUID>
+      <GUID>E68E19391DECDE6DDD0B400E3D572412</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -5251,7 +5251,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Miscellaneous\User Events\Initialization_UserEvents.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5A4EFB7217A0F43A7CB41B5D9637C83B</GUID>
+      <GUID>3ED7EC5742031781D9D1052892567570</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>6</Parent_Palette_Index>
@@ -5286,7 +5286,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\User Dialogs\SubVIs\Initialize_IconEditorSettings_Tree.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4EB9A5D9F46490BFC44098C299FB8610</GUID>
+      <GUID>0719F8C2877ACE832E1F804B7905A330</GUID>
     </Functions_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>-1</Parent_Palette_Index>
@@ -5321,7 +5321,7 @@
         <Path>..\..\resource\plugins\NIIconEditor</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C2E2721E46FA53718B5336E8062A550B</GUID>
+      <GUID>E82E8EFCABA19F2920F5660DC540DA7E</GUID>
     </Controls_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -5356,7 +5356,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Controls</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F451079F45BA50D1651F17BD6A6522F9</GUID>
+      <GUID>E1209B15B8ABFF33315CD2E92715417A</GUID>
     </Controls_Palette_Data>
     <Controls_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -6161,7 +6161,7 @@
         <Path>..\..\resource\plugins\NIIconEditor\Controls\XMLDataStructureIconLibrary.ctl</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>8CD4F01C0788EE58084BEE6082E8E7A3</GUID>
+      <GUID>2724AF395C9E063AD2D9D987CE4019AC</GUID>
     </Controls_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
