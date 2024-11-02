@@ -13,6 +13,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Examples git" Type="Folder">
+			<Item Name="GIT-API-for-LabVIEW.lvlib" Type="Library" URL="/&lt;vilib&gt;/Hampel Software Engineering/Git API/GIT-API-for-LabVIEW.lvlib"/>
+		</Item>
 		<Item Name="Support" Type="Folder">
 			<Item Name="Source code root file path.vi" Type="VI" URL="../Source code root file path.vi"/>
 			<Item Name="LabVIEW version.vi" Type="VI" URL="../LabVIEW version.vi"/>
@@ -21,6 +24,7 @@
 			<Item Name="Build the ppl.vi" Type="VI" URL="../Build the ppl.vi"/>
 			<Item Name="Create VIPC from folder.vi" Type="VI" URL="../Create VIPC from folder.vi"/>
 			<Item Name="Create new VIP.vi" Type="VI" URL="../Create new VIP.vi"/>
+			<Item Name="Git sandbox.vi" Type="VI" URL="../Git sandbox.vi"/>
 		</Item>
 		<Item Name="Build all.vi" Type="VI" URL="../Build all.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
@@ -130,6 +134,8 @@
 				<Item Name="Variant to Header Info__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/_VIPM API_internal_deps/Variant to Header Info__ogtkDDA31ED5A732916949AA00FDC27B02BA.vi"/>
 				<Item Name="VIPM API_vipm_api.lvlib" Type="Library" URL="/&lt;vilib&gt;/JKI/VIPM API/VIPM API_vipm_api.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
+				<Item Name="LVDateTimeRec.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVDateTimeRec.ctl"/>
+				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 			</Item>
 			<Item Name="AB_UI_Change_Path_from_Label.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/AppBuilder/AB_UI_Change_Path_from_Label.vi"/>
 			<Item Name="CDK_GLOBAL_STRINGS.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_GLOBAL_STRINGS.vi"/>
