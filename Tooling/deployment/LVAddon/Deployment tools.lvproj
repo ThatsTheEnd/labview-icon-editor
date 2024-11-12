@@ -13,7 +13,6 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Modify icon editor project to deploy to LVAddons.vi" Type="VI" URL="../Modify icon editor project to deploy to LVAddons.vi"/>
-		<Item Name="Set Build Spec Absolute Paths.vi" Type="VI" URL="../Set Build Spec Absolute Paths.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
