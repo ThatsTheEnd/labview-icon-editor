@@ -327,10 +327,7 @@
 				<Item Name="Missing PPLs on LV project.vi" Type="VI" URL="../Tooling/Unit tests/Missing PPLs on LV project.vi"/>
 				<Item Name="Missing VIs or controls on LV project.vi" Type="VI" URL="../Tooling/Unit tests/Missing VIs or controls on LV project.vi"/>
 			</Item>
-			<Item Name="deployment" Type="Folder">
-				<Item Name="lvaddoninfo32.json" Type="Document" URL="../Tooling/deployment/LVAddon/lvaddoninfo32.json"/>
-				<Item Name="lvaddoninfo64.json" Type="Document" URL="../Tooling/deployment/LVAddon/lvaddoninfo64.json"/>
-			</Item>
+			<Item Name="deployment" Type="Folder"/>
 			<Item Name="Force Icon Editor to Unload.vi" Type="VI" URL="../Tooling/Force Icon Editor to Unload.vi"/>
 			<Item Name="Post Build Icon Editor PPL.vi" Type="VI" URL="../Tooling/Post Build Icon Editor PPL.vi"/>
 			<Item Name="Pre Build Icon Editor PPL.vi" Type="VI" URL="../Tooling/Pre Build Icon Editor PPL.vi"/>
@@ -650,15 +647,16 @@
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
 				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
 				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">/C/Program Files/NI/LVAddons/niiconeditor64/1/resource/plugins</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../resource/plugins</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_preActionVIID" Type="Ref">/My Computer/Tooling/Pre Build Icon Editor PPL.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{C699D48A-6A0A-4A55-BF6A-D6FC254001CD}</Property>
 				<Property Name="Bld_version.build" Type="Int">16</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">/C/Program Files/NI/LVAddons/niiconeditor64/1/resource/plugins/lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].path.type" Type="Str">&lt;none&gt;</Property>
+				<Property Name="Destination[0].path" Type="Path">../resource/plugins/lv_icon.lvlibp</Property>
+				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
@@ -666,7 +664,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{3F5F8B36-2C2C-45AF-BD76-16C1746E0675}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{84F36BCC-44A1-4452-B08B-C98F2322BD19}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/resource\/plugins/lv_icon.lvlib</Property>
@@ -749,232 +747,6 @@
 				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2024 National Instruments</Property>
 				<Property Name="TgtF_productName" Type="Str">Icon Editor Packed Library</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{8000CA4B-2279-41C6-9767-84059F743142}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">lv_icon.lvlibp</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="Editor Packed Library x64" Type="Packed Library">
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{463E07C0-41D8-45CB-9F09-891CCAADBB15}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">Editor Packed Library x64</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../Program Files/NI/LVAddons/niiconeditor64/1/resource/plugins</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{E38F5BFB-FFEF-402D-90BE-83B2B4659BBC}</Property>
-				<Property Name="Bld_version.build" Type="Int">19</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor64/1/resource/plugins/lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor64/1/resource/plugins</Property>
-				<Property Name="Destination[2].destName" Type="Str">LVAddonsJSON</Property>
-				<Property Name="Destination[2].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor64/1</Property>
-				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{07300715-7963-4000-AC55-806CB369F017}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/resource\/plugins/lv_icon.lvlib</Property>
-				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
-				<Property Name="Source[1].preventRename" Type="Bool">true</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">Library</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Get Library Icon.vi</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
-				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Get VI Icon.vi</Property>
-				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[11].type" Type="Str">VI</Property>
-				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Low Level Functions/Generate Border User Layer.vi</Property>
-				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].type" Type="Str">VI</Property>
-				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Create Icon Framework.vi</Property>
-				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">VI</Property>
-				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Draw Template Glyph.vi</Property>
-				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[14].type" Type="Str">VI</Property>
-				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Populate Body Text Data.vi</Property>
-				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].type" Type="Str">VI</Property>
-				<Property Name="Source[16].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[16].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Controls</Property>
-				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[16].type" Type="Str">Container</Property>
-				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Graphics/LoadGraphics.vi</Property>
-				<Property Name="Source[17].type" Type="Str">VI</Property>
-				<Property Name="Source[18].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[18].itemID" Type="Ref">/My Computer/Tooling/deployment/lvaddoninfo64.json</Property>
-				<Property Name="Source[18].newName" Type="Str">lvaddoninfo.json</Property>
-				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib</Property>
-				<Property Name="Source[2].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[2].type" Type="Str">Library</Property>
-				<Property Name="Source[3].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API</Property>
-				<Property Name="Source[3].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[3].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[3].propertiesCount" Type="Int">1</Property>
-				<Property Name="Source[3].type" Type="Str">Container</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Icon Editor/Keep IE in Memory.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Support/ApplyLibIconOverlayToVIIcon.vi</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
-				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Create new class icon user layers.vi</Property>
-				<Property Name="Source[6].type" Type="Str">VI</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Launch Icon Editor From String.vi</Property>
-				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[7].type" Type="Str">VI</Property>
-				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Set Library Icon.vi</Property>
-				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[8].type" Type="Str">VI</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Set VI Icon.vi</Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">19</Property>
-				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_internalName" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2024 National Instruments</Property>
-				<Property Name="TgtF_productName" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{5BAAC9F8-29BA-48BC-8AEF-1C9AE0FA442A}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">lv_icon.lvlibp</Property>
-				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
-			</Item>
-			<Item Name="Editor Packed Library x86" Type="Packed Library">
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{6520C79F-B902-4CD9-942D-BC5502669270}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">Editor Packed Library x86</Property>
-				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
-				<Property Name="Bld_excludePolymorphicVIs" Type="Bool">true</Property>
-				<Property Name="Bld_excludeTypedefs" Type="Bool">true</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../Program Files/NI/LVAddons/niiconeditor32/1/resource/plugins</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{81D35B4C-6136-43CB-9DA0-3145FA1A0345}</Property>
-				<Property Name="Bld_version.build" Type="Int">20</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor32/1/resource/plugins/lv_icon.lvlibp</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[0].type" Type="Str">App</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor32/1/resource/plugins</Property>
-				<Property Name="Destination[2].destName" Type="Str">LVAddonsJSON</Property>
-				<Property Name="Destination[2].path" Type="Path">../Program Files/NI/LVAddons/niiconeditor32/1</Property>
-				<Property Name="DestinationCount" Type="Int">3</Property>
-				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{07300715-7963-4000-AC55-806CB369F017}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/resource\/plugins/lv_icon.lvlib</Property>
-				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
-				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
-				<Property Name="Source[1].preventRename" Type="Bool">true</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
-				<Property Name="Source[1].type" Type="Str">Library</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Get Library Icon.vi</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
-				<Property Name="Source[11].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[11].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Get VI Icon.vi</Property>
-				<Property Name="Source[11].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[11].type" Type="Str">VI</Property>
-				<Property Name="Source[12].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[12].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Low Level Functions/Generate Border User Layer.vi</Property>
-				<Property Name="Source[12].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[12].type" Type="Str">VI</Property>
-				<Property Name="Source[13].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[13].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Create Icon Framework.vi</Property>
-				<Property Name="Source[13].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[13].type" Type="Str">VI</Property>
-				<Property Name="Source[14].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[14].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Draw Template Glyph.vi</Property>
-				<Property Name="Source[14].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[14].type" Type="Str">VI</Property>
-				<Property Name="Source[15].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[15].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Support/Populate Body Text Data.vi</Property>
-				<Property Name="Source[15].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[15].type" Type="Str">VI</Property>
-				<Property Name="Source[16].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[16].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[16].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[16].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Controls</Property>
-				<Property Name="Source[16].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[16].type" Type="Str">Container</Property>
-				<Property Name="Source[17].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[17].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Graphics/LoadGraphics.vi</Property>
-				<Property Name="Source[17].type" Type="Str">VI</Property>
-				<Property Name="Source[18].destinationIndex" Type="Int">2</Property>
-				<Property Name="Source[18].itemID" Type="Ref">/My Computer/Tooling/deployment/lvaddoninfo32.json</Property>
-				<Property Name="Source[18].newName" Type="Str">lvaddoninfo.json</Property>
-				<Property Name="Source[18].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib</Property>
-				<Property Name="Source[2].Library.allowMissingMembers" Type="Bool">true</Property>
-				<Property Name="Source[2].type" Type="Str">Library</Property>
-				<Property Name="Source[3].Container.applyProperties" Type="Bool">true</Property>
-				<Property Name="Source[3].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[3].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API</Property>
-				<Property Name="Source[3].properties[0].type" Type="Str">Allow debugging</Property>
-				<Property Name="Source[3].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[3].propertiesCount" Type="Int">1</Property>
-				<Property Name="Source[3].type" Type="Str">Container</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Icon Editor/Keep IE in Memory.vi</Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[4].type" Type="Str">VI</Property>
-				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Support/ApplyLibIconOverlayToVIIcon.vi</Property>
-				<Property Name="Source[5].type" Type="Str">VI</Property>
-				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Miscellaneous/Create new class icon user layers.vi</Property>
-				<Property Name="Source[6].type" Type="Str">VI</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/resource\/plugins/NIIconEditor/Launch Icon Editor From String.vi</Property>
-				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[7].type" Type="Str">VI</Property>
-				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Set Library Icon.vi</Property>
-				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[8].type" Type="Str">VI</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/vi.lib\/LabVIEW Icon API/LabVIEW Icon API.lvlib/Set VI Icon.vi</Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[9].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">19</Property>
-				<Property Name="TgtF_companyName" Type="Str">National Instruments</Property>
-				<Property Name="TgtF_fileDescription" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_internalName" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Copyright © 2024 National Instruments</Property>
-				<Property Name="TgtF_productName" Type="Str">Icon Editor Packed Library</Property>
-				<Property Name="TgtF_targetfileGUID" Type="Str">{5FC27879-8A04-4B89-BACB-9D51D8C98B09}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">lv_icon.lvlibp</Property>
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
