@@ -1,21 +1,21 @@
 ﻿<Solution xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/NationalInstruments.PackageBuilder.Engine">
-    <Name>LVAddonIE_x64</Name>
+    <Name>LVAddonIE_x86</Name>
     <SourceItems>
         <SourceItem z:Id="i2">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32\1\lvaddoninfo.json</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
         <SourceItem z:Id="i3">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32\1\resource\plugins\lv_icon.lvlibp</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
         <SourceItem z:Id="i4">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32\1\resource\plugins</RelativePath>
             <DependentItems>
                 <SourceItem z:Ref="i3" />
             </DependentItems>
@@ -23,7 +23,7 @@
         </SourceItem>
         <SourceItem z:Id="i5">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32\1\resource</RelativePath>
             <DependentItems>
                 <SourceItem z:Ref="i4" />
             </DependentItems>
@@ -31,7 +31,7 @@
         </SourceItem>
         <SourceItem z:Id="i6">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32\1</RelativePath>
             <DependentItems>
                 <SourceItem z:Ref="i2" />
                 <SourceItem z:Ref="i5" />
@@ -40,7 +40,7 @@
         </SourceItem>
         <SourceItem z:Id="i7">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor32</RelativePath>
             <DependentItems>
                 <SourceItem z:Ref="i6" />
             </DependentItems>
@@ -54,75 +54,86 @@
         <Distribution z:Id="i8" i:type="Package">
             <DistributionItems>
                 <DistributionItem z:Id="i9" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons</DestinationRelativePath>
-                    <Name>LVAddons</Name>
+                    <DestinationRelativePath>[BootVolume]\Program Files</DestinationRelativePath>
+                    <Name>Program Files</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
                 <DistributionItem z:Id="i10" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64</DestinationRelativePath>
-                    <Name>niiconeditor64</Name>
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI</DestinationRelativePath>
+                    <Name>NI</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
                 <DistributionItem z:Id="i11" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64\1</DestinationRelativePath>
-                    <Name>1</Name>
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons</DestinationRelativePath>
+                    <Name>LVAddons</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
                 <DistributionItem z:Id="i12" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64\1\resource</DestinationRelativePath>
-                    <Name>resource</Name>
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32</DestinationRelativePath>
+                    <Name>niiconeditor32</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
                 <DistributionItem z:Id="i13" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64\1\resource\plugins</DestinationRelativePath>
-                    <Name>plugins</Name>
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32\1</DestinationRelativePath>
+                    <Name>1</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
                 <DistributionItem z:Id="i14" i:type="DistributionFileItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64\1\lvaddoninfo.json</DestinationRelativePath>
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32\1\lvaddoninfo.json</DestinationRelativePath>
                     <Name>lvaddoninfo.json</Name>
                     <SourceItem z:Ref="i2" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i15" i:type="DistributionFileItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</DestinationRelativePath>
+                <DistributionItem z:Id="i15" i:type="DistributionDirectoryItem">
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32\1\resource</DestinationRelativePath>
+                    <Name>resource</Name>
+                    <SourceItem i:nil="true" />
+                </DistributionItem>
+                <DistributionItem z:Id="i16" i:type="DistributionDirectoryItem">
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32\1\resource\plugins</DestinationRelativePath>
+                    <Name>plugins</Name>
+                    <SourceItem i:nil="true" />
+                </DistributionItem>
+                <DistributionItem z:Id="i17" i:type="DistributionFileItem">
+                    <DestinationRelativePath>[BootVolume]\Program Files\NI\LVAddons\niiconeditor32\1\resource\plugins\lv_icon.lvlibp</DestinationRelativePath>
                     <Name>lv_icon.lvlibp</Name>
                     <SourceItem z:Ref="i3" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>false</ProcessDuringStaging>
                 </DistributionItem>
             </DistributionItems>
-            <Name>NI Icon editor x64</Name>
+            <Name>NI Icon editor x86</Name>
             <OutputDirectory>..\..\..\builds\lv_icon_editor</OutputDirectory>
             <PluginConfigurationOptions />
             <PrebuildAnalysisEnabled>true</PrebuildAnalysisEnabled>
-            <Architecture>windows_x64</Architecture>
+            <Architecture>windows_all</Architecture>
             <AutoIncrementVersion>Build</AutoIncrementVersion>
-            <BuildStatus z:Id="i16">
-                <FileName />
-                <Version>none</Version>
+            <BuildStatus z:Id="i18">
+                <BuildEverSuccessful>true</BuildEverSuccessful>
+                <FileName>ni-iconeditor-x86_1.0.0.2_windows_all.nipkg</FileName>
+                <Version>1.0.0.2</Version>
             </BuildStatus>
             <CompanyName>MyCompany</CompanyName>
             <CustomExecutes />
-            <Description>Deploys lv_icon.lvlibp to LVAddons</Description>
-            <DisplayName>NI Icon editor x64</DisplayName>
-            <FileName>ni-iconeditor-x64_1.0.0.1_windows_x64.nipkg</FileName>
+            <Description>Deploys lv_icon.lvlibp to LVAddons 32 bits</Description>
+            <DisplayName>NI Icon editor x86</DisplayName>
+            <FileName>ni-iconeditor-x86_1.0.0.3_windows_all.nipkg</FileName>
             <MaintainerEmail>support@ni.com</MaintainerEmail>
             <MaintainerName>NI</MaintainerName>
             <Messages xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-            <PackageName>ni-iconeditor-x64</PackageName>
+            <PackageName>ni-iconeditor-x86</PackageName>
             <PackageRelationships />
             <ProductName>MyProduct</ProductName>
             <Section>Add-Ons</Section>
             <StoreProduct>true</StoreProduct>
-            <Synopsis>ni-iconeditor-x64</Synopsis>
-            <Version>1.0.0.1</Version>
+            <Synopsis>ni-iconeditor-x86</Synopsis>
+            <Version>1.0.0.3</Version>
         </Distribution>
     </Distributions>
     <Feeds />
     <DistributionGroups>
-        <DistributionGroup z:Id="i17">
+        <DistributionGroup z:Id="i19">
             <Distributions>
                 <Distribution z:Ref="i8" />
             </Distributions>

@@ -12,6 +12,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Create LVAddon JSON file.vi" Type="VI" URL="../Create LVAddon JSON file.vi"/>
 		<Item Name="Modify icon editor project to deploy to LVAddons.vi" Type="VI" URL="../Modify icon editor project to deploy to LVAddons.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
