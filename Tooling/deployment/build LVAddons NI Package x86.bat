@@ -1,6 +1,6 @@
 @echo on
 setlocal
-set "VIServerPort=3363"
+set "VIServerPort=3369"
 set "RelativePath=C:\labview-icon-editor\"
 set "ModifyIconEditorProjectVI=Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi"
 set "CreateLVAddonJsonFileVI=Tooling\deployment\NIPackage\CreateLVAddonJSONFile.vi"
