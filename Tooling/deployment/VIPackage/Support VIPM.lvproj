@@ -30,6 +30,10 @@
 		<Item Name="Pre-Build Custom Action.vi" Type="VI" URL="../Pre-Build Custom Action.vi"/>
 		<Item Name="Pre-Install Custom Action.vi" Type="VI" URL="../Pre-Install Custom Action.vi"/>
 		<Item Name="Get VI server port from LV Version.vi" Type="VI" URL="../Get VI server port from LV Version.vi"/>
+		<Item Name="Install Support_Post-Uninstall Custom Action.vi" Type="VI" URL="../Install Support_Post-Uninstall Custom Action.vi"/>
+		<Item Name="Install Support_Pre-Install Custom Action.vi" Type="VI" URL="../Install Support_Pre-Install Custom Action.vi"/>
+		<Item Name="LabVIEW version alias to path.vi" Type="VI" URL="../LabVIEW version alias to path.vi"/>
+		<Item Name="Prepare LV to Use Icon Editor Source v2.vi" Type="VI" URL="../../../Prepare LV to Use Icon Editor Source v2.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AB_Generate_Error_Cluster.vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/AB_Generate_Error_Cluster.vi"/>
@@ -99,6 +103,22 @@
 				<Item Name="VI Package Build Spec Data Cluster_vipm_api.ctl" Type="VI" URL="/&lt;vilib&gt;/JKI/VIPM API/command-line/Support/VI Package Build Spec Data Cluster_vipm_api.ctl"/>
 				<Item Name="Version Info Cluster_vipm_api.ctl" Type="VI" URL="/&lt;vilib&gt;/JKI/VIPM API/command-line/Support/Version Info Cluster_vipm_api.ctl"/>
 				<Item Name="Read VI Package Build Spec_vipm_api.vi" Type="VI" URL="/&lt;vilib&gt;/JKI/VIPM API/Read VI Package Build Spec_vipm_api.vi"/>
+				<Item Name="Dflt Data Dir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Dflt Data Dir.vi"/>
+				<Item Name="NI_Unzip.lvlib" Type="Library" URL="/&lt;vilib&gt;/zip/NI_Unzip.lvlib"/>
+				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
+				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
+				<Item Name="Path To Command Line String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Path To Command Line String.vi"/>
+				<Item Name="PathToUNIXPathString.vi" Type="VI" URL="/&lt;vilib&gt;/Platform/CFURL.llb/PathToUNIXPathString.vi"/>
+				<Item Name="Create Directory Recursive.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Create Directory Recursive.vi"/>
+				<Item Name="New Zip File.vi" Type="VI" URL="/&lt;vilib&gt;/zip/New Zip File.vi"/>
+				<Item Name="Recursive File List.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Recursive File List.vi"/>
+				<Item Name="List Directory and LLBs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/List Directory and LLBs.vi"/>
+				<Item Name="Add File to Zip.vi" Type="VI" URL="/&lt;vilib&gt;/zip/Add File to Zip.vi"/>
+				<Item Name="Relative Path To Platform Independent String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Relative Path To Platform Independent String.vi"/>
+				<Item Name="Close Zip File.vi" Type="VI" URL="/&lt;vilib&gt;/zip/Close Zip File.vi"/>
+				<Item Name="1D String Array to Delimited String.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/1D String Array to Delimited String.vi"/>
+				<Item Name="Delimited String to 1D String Array.vi" Type="VI" URL="/&lt;vilib&gt;/AdvancedString/Delimited String to 1D String Array.vi"/>
+				<Item Name="Space Constant.vi" Type="VI" URL="/&lt;vilib&gt;/dlg_ctls.llb/Space Constant.vi"/>
 			</Item>
 			<Item Name="AB_UI_Change_Path_from_Label.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/AppBuilder/AB_UI_Change_Path_from_Label.vi"/>
 			<Item Name="CDK_GLOBAL_STRINGS.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Builds/Installer/CDK_GLOBAL_STRINGS.vi"/>
@@ -130,6 +150,15 @@
 			<Item Name="provcom_GetTargetOS.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_GetTargetOS.vi"/>
 			<Item Name="provcom_StringGlobals.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_StringGlobals.vi"/>
 			<Item Name="provcom_Utility_IsEmptyOrWhiteSpace.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_Utility_IsEmptyOrWhiteSpace.vi"/>
+			<Item Name="Delete Icon Editor from LV Installation.vi" Type="VI" URL="../../../support/Delete Icon Editor from LV Installation.vi"/>
+			<Item Name="Get Paths to Icon Editor Files in LV Installation.vi" Type="VI" URL="../../../support/Get Paths to Icon Editor Files in LV Installation.vi"/>
+			<Item Name="IE_Resolve Symbolic Paths.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Support/IE_Resolve Symbolic Paths.vi"/>
+			<Item Name="Prompt to Confirm Archival.vi" Type="VI" URL="../../../support/Prompt to Confirm Archival.vi"/>
+			<Item Name="Add Files to Archive.vi" Type="VI" URL="../../../support/Add Files to Archive.vi"/>
+			<Item Name="Set LibraryPaths to Include Icon Editor.vi" Type="VI" URL="../../../support/Set LibraryPaths to Include Icon Editor.vi"/>
+			<Item Name="Add dev dist if present.vi" Type="VI" URL="../../../support/Add dev dist if present.vi"/>
+			<Item Name="Force Icon Editor to Unload.vi" Type="VI" URL="../../../Force Icon Editor to Unload.vi"/>
+			<Item Name="Get Icon Editor Context.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/Get Icon Editor Context.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Packed Library" Type="Packed Library">
@@ -158,7 +187,7 @@
 				<Property Name="Source[0].itemID" Type="Str">{C117840B-0B75-4269-A155-ED413836D1B9}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/</Property>
+				<Property Name="Source[1].itemID" Type="Ref"></Property>
 				<Property Name="Source[1].Library.allowMissingMembers" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.atomicCopy" Type="Bool">true</Property>
 				<Property Name="Source[1].Library.LVLIBPtopLevel" Type="Bool">true</Property>
