@@ -1,0 +1,108 @@
+[10:25:45.17 AM] Solution log file opened: C:\labview-icon-editor\Tooling\deployment\NIPackage\log-LVAddonIE_x64.txt
+[10:25:45.17 AM] System summary
+   Date               11/14/2024 10:25:45
+   NIPB version       23.8.0.2508
+   NIPB bitness       64-bit
+   NIPM version       24.8.0.49279
+   Operating System   Windows 11 64-bit
+[10:50:10.88 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[10:51:02.82 AM] ======= Build Solution: Started =======
+[10:51:02.83 AM] NI Icon editor x64: Discover started.
+[10:51:02.83 AM] Warning 16061: Discovery could not be performed on missing input items.
+   C:\Program Files\NI\LVAddons\niiconeditor64
+[10:51:02.90 AM] Error -16057: Disconnected files and/or directories found.
+   Package name: NI Icon editor x64   Destination path: [Program Files (64-bit)]\LVAddons\niiconeditor64\1\lvaddoninfo.json
+   Package name: NI Icon editor x64   Destination path: [Program Files (64-bit)]\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp
+[10:51:02.90 AM] NI Icon editor x64: Discover failed
+[10:51:02.90 AM] ======= Build Solution: Summary =======
+[10:51:02.90 AM] NI applications state:
+   TestStand version:   2023 Q4 (23.0.0.49152) 64-bit
+[10:51:02.90 AM] 1) Package 'NI Icon editor x64' Build detailed summary
+   NI Icon editor x64   Failed
+   Failed operation     Discover
+   Output directory     C:\labview-icon-editor\builds\lv_icon_editor
+   Filename             ni-iconeditor-x64_1.0.0.4_windows_x64.nipkg
+   Stage directory      C:\labview-icon-editor\builds\lv_icon_editor\NI Icon editor x64
+   Package version      1.0.0.4
+   Display version      1.0.0
+   Architecture         windows_x64
+[10:51:02.90 AM] ======= Build Solution: 0 Succeeded, 1 Failed, 0 Canceled (elapsed time 00:00.07) =======
+[10:56:42.10 AM] ======= Discover: Started =======
+[10:56:42.17 AM] Discovery found 5 new dependencies.
+   Parent: C:\Program Files\NI\LVAddons\niiconeditor64                      New dependency: C:\Program Files\NI\LVAddons\niiconeditor64\1
+   Parent: C:\Program Files\NI\LVAddons\niiconeditor64\1                    New dependency: C:\Program Files\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json
+   Parent: C:\Program Files\NI\LVAddons\niiconeditor64\1                    New dependency: C:\Program Files\NI\LVAddons\niiconeditor64\1\resource
+   Parent: C:\Program Files\NI\LVAddons\niiconeditor64\1\resource           New dependency: C:\Program Files\NI\LVAddons\niiconeditor64\1\resource\plugins
+   Parent: C:\Program Files\NI\LVAddons\niiconeditor64\1\resource\plugins   New dependency: C:\Program Files\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp
+[10:56:42.18 AM] Discovery automatically reconnected 2 distribution items.
+   Reconnected [Program Files (64-bit)]\LVAddons\niiconeditor64\1\lvaddoninfo.json to C:\Program Files\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json.
+   Reconnected [Program Files (64-bit)]\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp to C:\Program Files\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp.
+[10:56:42.18 AM] ======= Discover: Summary =======
+[10:56:42.18 AM] NI applications state:
+   TestStand version:   2023 Q4 (23.0.0.49152) 64-bit
+[10:56:42.18 AM] ======= Discover: Complete (elapsed time 00:00.07) =======
+[11:01:23.99 AM] Removed input item: C:\Program Files\NI\LVAddons\niiconeditor64
+[11:01:35.20 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[11:01:36.67 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[11:04:12.75 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[11:04:21.17 AM] ======= Build Solution: Started =======
+[11:04:21.17 AM] Icon editor LVAddon x64: Discover started.
+[11:04:21.17 AM] Icon editor LVAddon x64: Discover successful
+[11:04:21.18 AM] Icon editor LVAddon x64: Analyze started.
+[11:04:21.20 AM] Warning 16052: Icon editor LVAddon x64: The package does not contain any files.
+[11:04:21.20 AM] Icon editor LVAddon x64: Analyze successful.
+[11:04:21.20 AM] Icon editor LVAddon x64: Clean started.
+[11:04:21.21 AM] Icon editor LVAddon x64: Clean successful.
+[11:04:21.22 AM] Icon editor LVAddon x64: Build Packages started.
+[11:04:21.70 AM] Icon editor LVAddon x64: Build Packages successful.
+[11:04:21.70 AM] NI Icon editor x64: Analyze started.
+[11:04:21.70 AM] NI Icon editor x64: Analyze successful.
+[11:04:21.71 AM] NI Icon editor x64: Clean started.
+[11:04:21.71 AM] NI Icon editor x64: Clean successful.
+[11:04:21.71 AM] NI Icon editor x64: Build Installers & Repositories started.
+[11:04:24.36 AM] NI Icon editor x64: Creating directories
+[11:04:24.37 AM] NI Icon editor x64: Exporting package installer binaries
+[11:04:24.41 AM] NI Icon editor x64: Exporting package installer binaries
+[11:05:01.21 AM] Exported ni-msdotnet4x to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported ni-msiproperties to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported ni-package-manager-deployment-support to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported ni-package-manager-released-feed to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported ni-package-manager-upgrader to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported ni-package-manager to NI Icon editor x64 pool.
+[11:05:01.21 AM] Exported system-windows-x64 to NI Icon editor x64 pool.
+[11:05:01.22 AM] NI Icon editor x64: Creating feed C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers\NI Icon editor x64\feeds\ni-package-manager
+[11:05:01.22 AM] NI Icon editor x64: Adding packages to feed C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers\NI Icon editor x64\feeds\ni-package-manager
+[11:05:39.19 AM] NI Icon editor x64: Exporting NI Package Manager packages
+[11:05:39.19 AM] NI Icon editor x64: Exporting products
+[11:05:39.19 AM] NI Icon editor x64: Exporting Icon editor LVAddon x64
+[11:05:48.62 AM] Exported ni-iconeditor-x64 to NI Icon editor x64 pool.
+[11:05:48.62 AM] NI Icon editor x64: Exporting Icon editor LVAddon x64
+[11:05:48.62 AM] NI Icon editor x64: Creating feed C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers\NI Icon editor x64\feeds\ni-iconeditor-x64
+[11:05:48.63 AM] NI Icon editor x64: Adding packages to feed C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers\NI Icon editor x64\feeds\ni-iconeditor-x64
+[11:05:48.64 AM] NI Icon editor x64: Generating suite definition file
+[11:05:48.66 AM] NI Icon editor x64: Build Installers & Repositories successful.
+[11:05:48.67 AM] ======= Build Solution: Summary =======
+[11:05:48.67 AM] NI applications state:
+   TestStand version:   2023 Q4 (23.0.0.49152) 64-bit
+[11:05:48.67 AM] 1) Package 'Icon editor LVAddon x64' Build detailed summary
+   Icon editor LVAddon x64   Succeeded
+   Output directory          C:\labview-icon-editor\builds\lv_icon_editor
+   Filename                  ni-iconeditor-x64_1.0.0.4_windows_x64.nipkg
+   Stage directory           C:\labview-icon-editor\builds\lv_icon_editor\Icon editor LVAddon x64
+   Package version           1.0.0.4
+   Display version           1.0.0
+   Architecture              windows_x64
+[11:05:48.67 AM] 2) Package Installer 'NI Icon editor x64' Build detailed summary
+   NI Icon editor x64   Succeeded
+   Output directory     C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers
+   Stage directory      C:\labview-icon-editor\Tooling\deployment\NIPackage\PackageInstallers\NI Icon editor x64
+   Packages             
+      Package   'Icon editor LVAddon x64'
+         Display name      Icon editor LVAddon x64
+         Package version   1.0.0.4
+         Architecture      windows_x64
+[11:05:48.67 AM] ======= Build Solution: 2 Succeeded, 0 Failed, 0 Canceled (elapsed time 01:27.49) =======
+[11:12:25.95 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[11:19:53.53 AM] Solution saved: C:\labview-icon-editor\Tooling\deployment\NIPackage\LVAddonIE_x64.pbs
+[11:19:53.55 AM] The application layout failed to save.
+   Another object with the same SerializationID ("") exists.
