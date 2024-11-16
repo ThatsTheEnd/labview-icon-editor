@@ -11,4 +11,4 @@ pool:
 
 steps:
 - script: call buildniiconeditor64LVAddonVIPackage.bat
-  workingDirectory: C:\labview-icon-editor\Tooling\deployment\
+  workingDirectory: $(System.DefaultWorkingDirectory)
