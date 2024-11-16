@@ -10,5 +10,5 @@ pool:
   vmImage: windows-latest
 
 steps:
-- script: call C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
-  workingDirectory: C:\
+- script: call buildniiconeditor64LVAddonVIPackage.bat
+  workingDirectory: C:\labview-icon-editor\Tooling\deployment\
