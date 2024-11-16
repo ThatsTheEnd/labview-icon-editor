@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: "sergiovelderrain"
+  name: "iconeditor"
   demands: "iconeditor -equals true"
 
 steps:
