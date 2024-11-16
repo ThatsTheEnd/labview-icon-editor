@@ -14,6 +14,6 @@ stages:
   jobs:
   - job: Build_the_damn_thing
     steps: 
-    - powershell: |
-         Start-Process -FilePath "C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - VIPackage.bat" -Verb RunAs
+    - script: |
+         "C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - VIPackage.bat"
     
