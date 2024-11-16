@@ -4,14 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- users/svelderrain/deployment-experiment
 
 pool:
   vmImage: windows-latest
 
-stages:
-- stage: Build batch file
-  jobs:
-  - job: Build the damn thing
- script: call C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
-
+steps:
+- task: BatchScript@1
+  inputs:
+    scriptPath: C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
