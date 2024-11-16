@@ -17,5 +17,5 @@ stages:
     - task: CmdLine@2
       inputs:
        script: 'test.bat'
-       workingDirectory: C:\labview-icon-editor\Tooling\deployment
+       workingDirectory: $(Build.SourcesDirectory)\Tooling\deployment
     
