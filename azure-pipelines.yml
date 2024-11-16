@@ -10,5 +10,5 @@ pool:
   vmImage: windows-latest
 
 steps:
-- script: build niiconeditor64 LVAddon - VIPackage.bat
+- script: buildniiconeditor64LVAddonVIPackage.bat
   workingDirectory: $(Build.Repository.LocalPath)
