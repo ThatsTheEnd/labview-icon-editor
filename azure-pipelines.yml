@@ -10,6 +10,5 @@ pool:
   vmImage: windows-latest
 
 steps:
-- task: BatchScript@1
-  inputs:
-    filename: C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
+- script: build niiconeditor64 LVAddon - VIPackage.bat
+  workingDirectory: C:\labview-icon-editor\Tooling\deployment
