@@ -10,13 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: 
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
- - task: BatchScript@1
+- task: BuildLVAddon@0
   inputs:
-    filename: 'C:\labview-icon-editor\Tooling\deployment\build niiconeditor32 LVAddon - VIPackage.bat'
+    scriptPath: "C:\labview-icon-editor\Tooling\deployment\build niiconeditor32 LVAddon - VIPackage.bat"
