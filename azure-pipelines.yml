@@ -4,14 +4,16 @@
 # https://aka.ms/yaml
 
 trigger:
-- users/svelderrain/deployment-experiment
+- main
 
 pool:
   vmImage: windows-latest
-  
-jobs:
 
-- job: Build_Packed_Project_Library
-  displayName: I Like Turtles
-  steps: 
-  - script: LabVIEWCLI -OperationName RunVI -VIPath "C:\labview-icon-editor\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe -PortNumber 3370 -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
+stages:
+- stage: Build_batch_file
+  jobs:
+  - job: Build_the_damn_thing
+    steps: 
+    - script: |
+         "C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+    
