@@ -8,7 +8,7 @@ trigger:
 
 pool:
   vmImage: windows-latest
-
+System.DefaultWorkingDirectory: C:\labview-icon-editor\Tooling\deployment
 steps:
 - script: call buildniiconeditor64LVAddonVIPackage.bat
   workingDirectory: $(System.DefaultWorkingDirectory)
