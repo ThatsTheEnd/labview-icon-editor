@@ -15,5 +15,5 @@ stages:
   - job: Build_the_damn_thing
     steps: 
     - script: |
-         "C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+         C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
     
