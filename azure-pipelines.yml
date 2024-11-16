@@ -8,7 +8,7 @@
 #NIPM API 3.2.1.9 (from VIPM)
 
 trigger:
-- main
+- users/svelderrain/deployment-experiment
 
 pool:
   name: "iconeditor"
