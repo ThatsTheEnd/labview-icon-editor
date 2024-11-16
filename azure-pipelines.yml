@@ -9,7 +9,11 @@ trigger:
 pool:
   vmImage: windows-latest
 
-steps:
-- task: BatchScript@1
-  inputs:
-    scriptPath: C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
+stages:
+- stage: Build batch file
+  jobs:
+  - job: Build the damn thing
+    steps: 
+    - powershell: |
+        C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
+    
