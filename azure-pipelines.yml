@@ -10,7 +10,11 @@ pool:
   vmImage: windows-latest
 
 steps:
-- script: buildniiconeditor64LVAddonVIPackage.bat
-  workingDirectory: C:\labview-icon-editor\Tooling\deployment
-  displayName: Build 64 bit LabVIEW
-  failOnStderr: true
+# Command Line v2
+# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows.
+- task: CmdLine@2
+  inputs:
+    script: buildniiconeditor64LVAddonVIPackage.bat 
+  # Advanced
+    workingDirectory: C:\labview-icon-editor\Tooling\deployment 
+    #failOnStderr: false # boolean. Fail on Standard Error. Default: false.
