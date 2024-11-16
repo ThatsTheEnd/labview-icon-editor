@@ -14,7 +14,8 @@ stages:
   jobs:
   - job: Build_the_damn_thing
     steps: 
-    - task: BatchScript@1
+    - task: CmdLine@2
       inputs:
-       filename: 'test.bat'
+       script: 'test.bat'
+       workingDirectory: C:\labview-icon-editor\Tooling\deployment
     
