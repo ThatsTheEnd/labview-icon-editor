@@ -10,7 +10,7 @@ pool:
   vmImage: windows-latest
 
 stages:
-- stage: Build batch file
+- stage: Build_batch_file
   jobs:
   - job: Build_the_damn_thing
     steps: 
