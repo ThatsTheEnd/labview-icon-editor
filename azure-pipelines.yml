@@ -10,7 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: BuildLVAddon@0
+- task: BatchScript@1
   inputs:
-    scriptPath:
-   'C:\labview-icon-editor\Tooling\deployment\build niiconeditor32 LVAddon - VIPackage.bat'
+    scriptPath:$(Agent.BuildDirectory)
