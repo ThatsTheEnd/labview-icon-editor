@@ -12,4 +12,5 @@ pool:
 steps:
 - task: BuildLVAddon@0
   inputs:
-    scriptPath: "C:\labview-icon-editor\Tooling\deployment\build niiconeditor32 LVAddon - VIPackage.bat"
+    scriptPath:
+   'C:\labview-icon-editor\Tooling\deployment\build niiconeditor32 LVAddon - VIPackage.bat'
