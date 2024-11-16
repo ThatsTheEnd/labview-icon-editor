@@ -12,7 +12,7 @@ pool:
 stages:
 - stage: Build batch file
   jobs:
-  - job: Build the damn thing
+  - job: Build_the_damn_thing
     steps: 
     - powershell: |
         C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
