@@ -12,4 +12,4 @@ pool:
 steps:
 - task: BatchScript@1
   inputs:
-    scriptPath: "C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat"
+    scriptPath: C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
