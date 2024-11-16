@@ -10,10 +10,8 @@ pool:
   vmImage: windows-latest
 
 stages:
-- stage: Build_batch_file
+- stage: Build batch file
   jobs:
-  - job: Build_the_damn_thing
-    steps: 
-    - script: |
-         "C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - VIPackage.bat"
-    
+  - job: Build the damn thing
+ script: call C:\labview-icon-editor\Tooling\deployment\build niiconeditor64 LVAddon - NIPackage.bat
+
