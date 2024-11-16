@@ -11,4 +11,4 @@ pool:
 
 steps:
 - script: build niiconeditor64 LVAddon - VIPackage.bat
-  workingDirectory: C:\labview-icon-editor\Tooling\deployment
+  workingDirectory: $(Build.Repository.LocalPath)
