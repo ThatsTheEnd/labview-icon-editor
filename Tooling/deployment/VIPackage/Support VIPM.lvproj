@@ -26,14 +26,16 @@
 			<Item Name="Create new VIP.vi" Type="VI" URL="../Create new VIP.vi"/>
 			<Item Name="Commit all build changes.vi" Type="VI" URL="../Commit all build changes.vi"/>
 		</Item>
+		<Item Name="Post-Install Custom Action.vi" Type="VI" URL="../Post-Install Custom Action.vi"/>
+		<Item Name="Install Support_Post-Uninstall Custom Action.vi" Type="VI" URL="../Install Support_Post-Uninstall Custom Action.vi"/>
 		<Item Name="Build all.vi" Type="VI" URL="../Build all.vi"/>
-		<Item Name="Pre-Build Custom Action.vi" Type="VI" URL="../Pre-Build Custom Action.vi"/>
 		<Item Name="Pre-Install Custom Action.vi" Type="VI" URL="../Pre-Install Custom Action.vi"/>
 		<Item Name="Get VI server port from LV Version.vi" Type="VI" URL="../Get VI server port from LV Version.vi"/>
-		<Item Name="Install Support_Post-Uninstall Custom Action.vi" Type="VI" URL="../Install Support_Post-Uninstall Custom Action.vi"/>
 		<Item Name="Install Support_Pre-Install Custom Action.vi" Type="VI" URL="../Install Support_Pre-Install Custom Action.vi"/>
 		<Item Name="LabVIEW version alias to path.vi" Type="VI" URL="../LabVIEW version alias to path.vi"/>
 		<Item Name="Prepare LV to Use Icon Editor Source v2.vi" Type="VI" URL="../../../Prepare LV to Use Icon Editor Source v2.vi"/>
+		<Item Name="CreateLVAddonJSONfile.vi" Type="VI" URL="../../NIPackage/CreateLVAddonJSONfile.vi"/>
+		<Item Name="CreateLVINILocalHostKey.vi" Type="VI" URL="../../NIPackage/CreateLVINILocalHostKey.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AB_Generate_Error_Cluster.vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/AB_Generate_Error_Cluster.vi"/>
@@ -152,12 +154,12 @@
 			<Item Name="provcom_Utility_IsEmptyOrWhiteSpace.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_Utility_IsEmptyOrWhiteSpace.vi"/>
 			<Item Name="Delete Icon Editor from LV Installation.vi" Type="VI" URL="../../../support/Delete Icon Editor from LV Installation.vi"/>
 			<Item Name="Get Paths to Icon Editor Files in LV Installation.vi" Type="VI" URL="../../../support/Get Paths to Icon Editor Files in LV Installation.vi"/>
-			<Item Name="IE_Resolve Symbolic Paths.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Support/IE_Resolve Symbolic Paths.vi"/>
 			<Item Name="Prompt to Confirm Archival.vi" Type="VI" URL="../../../support/Prompt to Confirm Archival.vi"/>
 			<Item Name="Add Files to Archive.vi" Type="VI" URL="../../../support/Add Files to Archive.vi"/>
 			<Item Name="Set LibraryPaths to Include Icon Editor.vi" Type="VI" URL="../../../support/Set LibraryPaths to Include Icon Editor.vi"/>
 			<Item Name="Add dev dist if present.vi" Type="VI" URL="../../../support/Add dev dist if present.vi"/>
 			<Item Name="Force Icon Editor to Unload.vi" Type="VI" URL="../../../Force Icon Editor to Unload.vi"/>
+			<Item Name="IE_Resolve Symbolic Paths.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Support/IE_Resolve Symbolic Paths.vi"/>
 			<Item Name="Get Icon Editor Context.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/Get Icon Editor Context.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">

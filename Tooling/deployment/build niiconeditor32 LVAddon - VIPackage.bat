@@ -1,15 +1,15 @@
 @echo on
 setlocal
-set "VIServerPort=3370"
+set "VIServerPort=3369"
 set "RelativePath=C:\labview-icon-editor\"
 set "ModifyIconEditorProjectVI=Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi"
 set "ModifyIconEditorProjectVIPath="%RelativePath%%ModifyIconEditorProjectVI%""
 set "IconEditorBuildSpec="Editor Packed Library""
-set "LabVIEWPath="C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe""
+set "LabVIEWPath="C:\Program Files (x86)\National Instruments\LabVIEW 2021\LabVIEW.exe""
 
 REM Delete built LVAddon
 cd /d C:\Program Files\NI\LVAddons
-rmdir /s /q niiconeditor64
+rmdir /s /q niiconeditor32
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
 LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
