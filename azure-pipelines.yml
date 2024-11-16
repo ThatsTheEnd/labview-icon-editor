@@ -9,10 +9,6 @@ trigger:
 pool:
   vmImage: windows-latest
 
-stages:
-- stage: Build_batch_file
-  jobs:
-  - job: Build_the_damn_thing
-    steps: 
-    - script: call C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
-    
+- task: BatchScript@1
+  inputs:
+    filename: 'test.bat'
