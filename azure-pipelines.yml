@@ -16,5 +16,5 @@ steps:
   inputs:
     script: call Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
   # Advanced
-    #workingDirectory: C:\labview-icon-editor\Tooling\deployment 
+    workingDirectory: C:\windows\system32 
     #failOnStderr: false # boolean. Fail on Standard Error. Default: false.
