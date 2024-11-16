@@ -7,8 +7,7 @@ trigger:
 - main
 
 pool:
-  name: "iconeditor"
-  demands: "iconeditor -equals true"
+  vmImage: windows-latest
 
 steps:
 - task: BatchScript@1
