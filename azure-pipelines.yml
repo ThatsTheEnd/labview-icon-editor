@@ -8,29 +8,10 @@ trigger:
 
 pool:
   vmImage: windows-latest
+  
+jobs:
 
-steps:
-# Command Line v2
-# Run a command line script using Bash on Linux and macOS and cmd.exe on Windows.
-# PowerShell v2
-# Run a PowerShell script on Linux, macOS, or Windows.
-- task: PowerShell@2
-  inputs:
-    #targetType: 'filePath' # 'filePath' | 'inline'. Type. Default: filePath.
-    filePath: C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
-    #arguments: # string. Optional. Use when targetType = filePath. Arguments. 
-    #script: # string. Required when targetType = inline. Script. 
-  # Preference Variables
-    #errorActionPreference: 'stop' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. ErrorActionPreference. Default: stop.
-    #warningPreference: 'default' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. WarningPreference. Default: default.
-    #informationPreference: 'default' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. InformationPreference. Default: default.
-    #verbosePreference: 'default' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. VerbosePreference. Default: default.
-    #debugPreference: 'default' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. DebugPreference. Default: default.
-    #progressPreference: 'silentlyContinue' # 'default' | 'stop' | 'continue' | 'silentlyContinue'. ProgressPreference. Default: silentlyContinue.
-  # Advanced
-    #failOnStderr: false # boolean. Fail on Standard Error. Default: false.
-    #showWarnings: false # boolean. Show warnings as Azure DevOps warnings. Default: false.
-    #ignoreLASTEXITCODE: false # boolean. Ignore $LASTEXITCODE. Default: false.
-    #pwsh: false # boolean. Use PowerShell Core. Default: false.
-    #workingDirectory: # string. Working Directory. 
-    #runScriptInSeparateScope: false # boolean. Run script in the separate scope. Default: false.
+- job: Build_Packed_Project_Library
+  displayName: I Like Turtles
+  steps: 
+  - script: LabVIEWCLI -OperationName RunVI -VIPath "C:\labview-icon-editor\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe -PortNumber 3370 -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
