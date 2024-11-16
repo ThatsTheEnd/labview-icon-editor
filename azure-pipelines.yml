@@ -8,7 +8,9 @@ trigger:
 
 pool:
   vmImage: windows-latest
-System.DefaultWorkingDirectory: C:\labview-icon-editor\Tooling\deployment
+
 steps:
-- script: call buildniiconeditor64LVAddonVIPackage.bat
-  workingDirectory: $(System.DefaultWorkingDirectory)
+- script: buildniiconeditor64LVAddonVIPackage.bat
+  workingDirectory: C:\labview-icon-editor\Tooling\deployment
+  displayName: Build 64 bit LabVIEW
+  failOnStderr: true
