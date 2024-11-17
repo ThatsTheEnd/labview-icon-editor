@@ -10,7 +10,7 @@ pool:
 
 steps:
 - task: PowerShell@2
-  displayName: 'Execute Batch File'
+  displayName: 'Execute Batch File1'
   inputs:
     targetType: 'inline'
     script: |
@@ -42,8 +42,9 @@ steps:
 # Batch script
   # Run a Windows command or batch script and optionally allow it to change the environment
 - task: BatchScript@1
+  displayName: 'Execute Batch File3'
     inputs:
-      filename: 'Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+      filename: '$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
       arguments: # Optional
       modifyEnvironment: False # Optional
       workingFolder: $(Build.ArtifactStagingDirectory) # Optional
