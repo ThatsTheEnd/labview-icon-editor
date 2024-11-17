@@ -15,7 +15,7 @@ steps:
     targetType: 'inline'
     script: |
       # Define the path to the batch file
-      $batchFilePath = "$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+      $batchFilePath = "C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
       
       # Ensure the file exists
       if (Test-Path $batchFilePath) {
