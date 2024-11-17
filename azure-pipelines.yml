@@ -24,3 +24,18 @@ steps:
       } else {
           Write-Error "Batch file not found at $batchFilePath"
       }
+- task: PowerShell@2
+  displayName: 'Execute Batch File2'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Define the path to the batch file
+      $batchFilePath = "$(Build.SourcesDirectory)\Tooling\deployment\test.bat"
+      
+      # Ensure the file exists
+      if (Test-Path $batchFilePath) {
+          # Execute the batch file
+          & $batchFilePath
+      } else {
+          Write-Error "Batch file not found at $batchFilePath"
+      }
