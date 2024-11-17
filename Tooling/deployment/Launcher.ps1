@@ -1,0 +1,1 @@
+./buildniiconeditor64LVAddonVIPackage.bat
