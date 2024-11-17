@@ -2,24 +2,25 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
 trigger:
 - users/svelderrain/deployment-experiment
 
 pool:
-  vmImage: windows-latest
+  vmImage: 'windows-latest'
 
-stages:
-- stage: Build_batch_file
-  jobs:
-  - job: Build_the_damn_thing
-    steps: 
-    - task: CmdLine@2
-      inputs:
-       script: 'test.bat'
-       workingDirectory: $(Build.Repository.LocalPath)\Tooling\deployment
-    - task: CmdLine@2
-      displayName: Deploying LVAddon
-      inputs:
-       script: 'buildniiconeditor64LVAddonVIPackage.bat'
-       workingDirectory: $(Build.Repository.LocalPath)\Tooling\deployment 
+steps:
+- task: PowerShell@2
+  displayName: 'Execute Batch File'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Define the path to the batch file
+      $batchFilePath = "$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+      
+      # Ensure the file exists
+      if (Test-Path $batchFilePath) {
+          # Execute the batch file
+          & $batchFilePath
+      } else {
+          Write-Error "Batch file not found at $batchFilePath"
+      }
