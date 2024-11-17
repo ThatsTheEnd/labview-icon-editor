@@ -22,4 +22,4 @@ stages:
       displayName: Deploying LVAddon
       inputs:
        script: 'buildniiconeditor64LVAddonVIPackage.bat'
-     #  workingDirectory: $(Build.SourcesDirectory)\Tooling\deployment    
+       workingDirectory: $(Build.Repository.LocalPath)\Tooling\deployment 
