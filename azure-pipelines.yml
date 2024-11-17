@@ -64,11 +64,13 @@ stages:
   jobs:
   - template: pipeline\templates\Build_HMI_Package.yml
     parameters:
+      pool: Default
+      projectDemands: 'true -equals true'
       displayName: LabVIEW CLI Build HMI and NIPB Build Package
       jobName: Build_HMIexe_and_create_nipkg
       artifactName: HMIexe 
-      TimeoutInMinutes : 1
-      relativeprojectPath: .\lv_icon_editor.lvproj
+      TimeoutInMinutes : 10
+      relativeprojectPath: \lv_icon_editor.lvproj
       relativeArtifactPath: Tooling\Deployment
       nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
       builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
@@ -77,7 +79,7 @@ stages:
       LabVIEW_Version_B: $(LabVIEW_Version_B)
       LabVIEW_Port: $(LabVIEW_Port)
       LabVIEW_Folder: '$(LabVIEW_Folder)'
-      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\'
+      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\NIPB\Local_HMI'
       extensionFilter: '.pbs'
       packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
       packageVersion: $(build_version)
