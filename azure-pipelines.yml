@@ -40,6 +40,7 @@ stages:
         mkdir $(Pipeline.Workspace)/variables -ea 0
         echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
       displayName: Write Build Version To File
+    
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
   condition: succeeded()     
