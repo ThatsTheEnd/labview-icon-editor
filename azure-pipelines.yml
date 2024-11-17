@@ -30,6 +30,8 @@ stages:
        echo $(Build.Repository.LocalPath)
        cd $(Build.Repository.LocalPath)
        echo @dir
+       RUN icacls C:\ /grant "BUILTIN\IIS_IUSRS:(OI)(CI)F" /t
+
       displayName: Display Repo Folder on Agent      
 
     - powershell: |
