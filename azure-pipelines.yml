@@ -13,7 +13,7 @@ pool:
 variables:
   LabVIEW_Version: 2021
   LabVIEW_Version_B: 2021 --x64 #version with bitness
-  LabVIEW_Port: 3363
+  LabVIEW_Port: 3370
   LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
   build_id: $(Build.BuildID)
   build_revision: $[counter('buildCounter',1)]
@@ -40,3 +40,27 @@ stages:
         mkdir $(Pipeline.Workspace)/variables -ea 0
         echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
       displayName: Write Build Version To File
+- stage: Build_HMI_Package 
+  dependsOn: Create_Build_Variables
+  condition: succeeded()     
+
+  jobs:
+  - template: pipeline\templates\Build_HMI_Package.yml
+    parameters:
+      displayName: LabVIEW CLI Build HMI and NIPB Build Package
+      jobName: Build_HMIexe_and_create_nipkg
+      artifactName: HMIexe 
+      TimeoutInMinutes : 10
+      relativeprojectPath: .\lv_icon_editor.lvproj
+      relativeArtifactPath: Tooling\Deployment
+      nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
+      builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
+      targetName: 'My Computer'
+      LabVIEW_Version: $(LabVIEW_Version)
+      LabVIEW_Version_B: $(LabVIEW_Version_B)
+      LabVIEW_Port: $(LabVIEW_Port)
+      LabVIEW_Folder: '$(LabVIEW_Folder)'
+      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\NIPB\Local_HMI'
+      extensionFilter: '.pbs'
+      packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
+      packageVersion: $(build_version)

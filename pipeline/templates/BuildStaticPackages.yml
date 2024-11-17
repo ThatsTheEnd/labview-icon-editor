@@ -1,0 +1,94 @@
+#need to update PBS versions before building packages
+
+# Ni Package Builder Template
+# This Template Builds a NI Package Builder pbs files. 
+# Make sure the relative paths to the PBS file stay the same in the machine you create the pbs file and the build machine
+# More details in http://www.ni.com/documentation/en/ni-package-builder/latest/manual/cli/
+# The path to the files contained in an NI package is relative to the PBS file. This can be seen by opening the .PBS as a text file
+#
+# Very important. You need to follow these instructions for this to work on a build pc that is not logged in
+# https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000001Djl8CAC&l=en-US
+#
+parameters:
+ NIPBsLocation: ''
+ extensionFilter: '.pbs'
+ packageBuilderLocation: 'C:\Program Files (x86)\National Instruments\Package Builder\NipbCli.exe'
+ builtPackagePath: ''
+ nipkgsOnlyPath: ''
+ poolName: Global Services
+ projectDemands: 'GMLOTF2022 -equals true'
+ LabVIEW_Version: ''
+ LabVIEW_Port: ''
+ LabVIEW_Folder: ''
+
+jobs:
+
+- job: Build_Static_Packages
+  continueOnError: true
+  displayName: Building Packages
+  pool: 
+    name: ${{parameters.poolName}}
+    demands: ${{parameters.projectDemands}}
+  steps:
+  # Powershell does the following:
+  # deletes the files in the location that packages are built to
+  # Lists all extensionFilter files in the folder (in this case .pbs files)
+  # Iterates on each file in the list and calls the package builder cli to build the packages
+  # Need to set the package version number  
+  # Cleans old build artifacts in the agent
+  #- task: DeleteFiles@1
+    #inputs:
+      #SourceFolder: $(Pipeline.Workspace)\vcd
+      #Contents: |
+         #**/*
+  
+
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      buildType: current
+      downloadType: single
+      artifactName: variables
+      downloadPath: '$(Pipeline.Workspace)'
+    displayName: Download artifact that contains build_version   
+  # build_version artifact contains the build version
+  # download it so we can update the build version in the pbs file
+  - powershell: |
+      $vvariable = cat $(Pipeline.Workspace)/variables/build_version
+      Write-Host "##vso[task.setvariable variable=build_version]$vvariable"
+    displayName: Programatically create pipeline variable with build_version that was read from artifact
+  #the following PS script finds (recursively) all PBSs and builds them. It excludes the local HMI PBS since that is done at a latter stage where we call LV to build the UI first and then we build a package
+  - powershell: |
+      del '${{parameters.builtPackagePath}}' -r
+      $Dir = get-childitem '${{parameters.NIPBsLocation}}' -recurse  -Exclude Local_HMI.pbs
+      $List = $Dir | where {$_.extension -eq ".pbs"}
+      Write-Host "Show all file paths with .pbs extension found"
+      $List | format-table fullname
+      $List | ForEach-Object {
+        $curFile = $_.FullName
+        Write-Host "Current File: " $curFile
+        Write-Host "Updating version and calling NI package Builder"
+        Write-Host  g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\pbs-utilities\Update All Versions CLI Wrapper.vi" -- "$curFile" $(build_version) 
+        g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\pbs-utilities\Update All Versions CLI Wrapper.vi" -- "$curFile" $(build_version)
+        & '${{parameters.packageBuilderLocation}}' -o="$curFile" -b=packages
+        }
+    displayName: Build .nipkgs   
+    
+ 
+  - task: DeleteFiles@1
+    inputs:
+      SourceFolder: ${{parameters.nipkgsOnlyPath}}
+      Contents: |
+         **/*
+    displayName: Clean Staging Folder
+    
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\Tools\copy_files_with_extension(main).vi" -- *.nipkg ${{parameters.builtPackagePath}} ${{parameters.nipkgsOnlyPath}}
+    displayName: Copy only .nipkgs files to a staging folder 
+
+  # Publish the successful artifacts to pipeline
+  - task: PublishPipelineArtifact@1
+    condition: and(succeededOrFailed(),ne('${{parameters.packageLocation}}\Packages',''))
+    displayName: Publishing Packages
+    inputs:
+      targetPath: '${{parameters.nipkgsOnlyPath}}' 
+      artifactName: nipkgs
+     

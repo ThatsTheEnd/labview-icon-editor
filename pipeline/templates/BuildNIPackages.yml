@@ -1,0 +1,127 @@
+#need to update PBS versions before building packages
+
+# Ni Package Builder Template
+# This Template Builds a NI Package Builder pbs files. 
+# Make sure the relative paths to the PBS file stay the same in the machine you create the pbs file and the build machine
+# More details in http://www.ni.com/documentation/en/ni-package-builder/latest/manual/cli/
+#The path to the files contained in an NI package is relative to the PBS file. This can be seen by opening the .PBS as a text file
+parameters:
+ packageName: 'bts-main-installer'
+ displayName: 'BTS Main Installer LOF'
+ packageVersion: '1.0.0.0'
+ packageMaintainer: 'National Instruments'
+ packageSynopsis: ''
+ packageDescription: ''
+ pkgFolder: ''
+ extensionFilter: ''
+ builtPackagePath: ''
+ nipkgsOnlyPath: ''
+ poolName: Global Services
+ projectDemands: 'GMLOTF2022 -equals True'
+ LabVIEW_Version: ''
+ LabVIEW_Version_B: ''
+ LabVIEW_Port: ''
+ LabVIEW_Folder: ''
+
+jobs:
+
+- job: ${{parameters.jobName}}
+  timeoutInMinutes: 3 
+  continueOnError: true
+  pool: 
+    name: ${{parameters.poolName}}
+    demands: ${{parameters.projectDemands}}
+  variables:
+    templateFolderStructurePath: '$(Build.Repository.LocalPath)\pipeline\NI_Package\Template_Folder_Structure'
+    #----attributes to change-----# ( Use NIPB to see what characters are allowed for each field, it's really finicky!!)
+    Package name: ${{parameters.packageName}}
+    Display name: ${{parameters.displayName}}
+    Version: ${{parameters.packageVersion}}
+    Maintainer: ${{parameters.packageMaintainer}}
+    Synopsis: ${{parameters.pacakgeSynopsis}}
+    Description: ${{parameters.packageDescription}}
+
+    #-----nipkg Files to add to package----#
+    pkgFolder: ${{parameters.pkgFolder}}
+
+    #-----ExtensionFilter-----#
+    ExtensionFilter: ${{parameters.extensionFilter}}
+
+    #-----Path To Dump Built Package-----#
+    builtPackagePath: '${{parameters.builtPackagePath}}' 
+    
+  steps:
+  # Cleans old build artifacts in the agent
+  - task: DeleteFiles@1
+    inputs:
+      SourceFolder: $(Pipeline.Workspace)\vcd
+      Contents: |
+        **/*
+
+  #- download: current
+  
+  #Printing the BUILD ID while we figure which one to use for versioning
+  #- script: echo $(Build.BuildID)
+  #Printing the BUILD Number while we figure which one to use for versioning
+  #- script: echo $(Build.BuildNumber)
+
+  #Get the artifacts generated from the other stages. This places all the folders into the VCD folder. 
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      buildType: 'current' # Options: current, specific 
+      targetPath: $(Pipeline.Workspace)/vcd
+        #project: # Required when buildType == Specific
+        #definition: # Required when buildType == Specific
+        #specificBuildWithTriggering: false # Optional
+        #buildVersionToDownload: 'latest' # Required when buildType == Specific# Options: latest, latestFromBranch, specific
+        #branchName: 'refs/heads/master' # Required when buildType == Specific && RunVersion == LatestFromBranch
+        #pipelineId: # Required when buildType == Specific && RunVersion == Specific
+        #tags: # Optional
+        #artifactName: # Optional
+        #itemPattern: '**' # Optional#
+        
+  - script: echo $(Pipeline.Workspace)/vcd
+    displayName: Show Path where artifacts will be pulled from
+
+  - script: echo $(templateFolderStructurePath)
+    displayName: Show Path to Template Folder Structure
+    
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\NI_Package\modify_ctl_file(main).vi" -- "$(templateFolderStructurePath)" "Package name:$(Package name)" "Version:$(Version)" "Description:$(Description)" "Synopsis:$(Synopsis)" "Maintainer:$(Maintainer)" "Display name:$(Display name)"
+    displayName: Edit Template Control File Attributes 
+
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\NI_Package\modify_data_directory(main).vi" -- "$(templateFolderStructurePath)" ExtensionFilter:.nipkg "$(pkgFolder)|Documents\National_Instruments\BTS_Main_Installer_Temp"
+    displayName: Add nipkg Files To main installer  
+    
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\NI_Package\modify_data_directory(main).vi" -- "$(templateFolderStructurePath)" ExtensionFilter:$(ExtensionFilter) "$(Build.Repository.LocalPath)\deployment\Master Installer\Unatended_Installer_Builds|Documents\National_Instruments\BTS_Main_Installer_Temp"
+    displayName: Add LV tool to install nipkgs to main installer    
+    
+  #- script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\NI_Package\modify_instructions_file(main).vi" -- "$(templateFolderStructurePath)" ["customExecute root="Documents" exeName="National_Instruments\BTS_Main_Installer_Temp\Unatended_Installer.exe" hideConsoleWindow="n" ignoreErrors="n" schedule="postall" step="install" wait="y""]
+    #displayName: Configure package to call LVtool when it runs
+
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\NI_Package\pack(main).vi" -- "$(templateFolderStructurePath)" "$(builtPackagePath)"
+    displayName: Build Package  
+
+  - task: DeleteFiles@1
+    inputs:
+      SourceFolder: ${{parameters.nipkgsOnlyPath}}
+      Contents: |
+         **/*
+    displayName: Clean Staging Folder
+    
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\Tools\copy_files_with_extension(main).vi" -- *.nipkg ${{parameters.builtPackagePath}} ${{parameters.nipkgsOnlyPath}}
+    displayName: Copy only .nipkgs files to a staging folder
+    
+ # Publish the successful artifacts to pipeline
+  - task: PublishPipelineArtifact@1
+    condition: and(succeeded(),ne('${{parameters.packageLocation}}\Packages',''))
+    displayName: Publishing Main Installer Package
+    inputs:
+      targetPath: '${{parameters.nipkgsOnlyPath}}'
+      artifactName: main_installer   
+
+    #
+
+  
+  
+  
+    
