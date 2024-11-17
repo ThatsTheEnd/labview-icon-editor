@@ -6,14 +6,37 @@
 trigger:
 - users/svelderrain/deployment-experiment
 
-pool:
-  vmImage: windows-latest
+name: $(Build.BuildID)
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+variables:
+  LabVIEW_Version: 2021
+  LabVIEW_Version_B: 2021 --x64 #version with bitness
+  LabVIEW_Port: 3363
+  LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
+  build_id: $(Build.BuildID)
+  build_revision: $[counter('buildCounter',1)]
+  build_version: '1.0.$(Build.BuildID).$(build_revision)'
+  Run_Build_Variables: true
 
-- script: 
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Create_Build_Variables
+  condition: eq(variables.Run_Build_Variables,true)
+  jobs:
+  - job: Create_Build_Versions_Artifact
+    steps:
+    - script: echo $(Build.Repository.LocalPath)
+      displayName: Display Repo Folder on Agent      
+
+    - powershell: |
+        mkdir $(Pipeline.Workspace)/variables -ea 0
+        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
+      displayName: Write Build Version To File
+      
+    - script: echo $(build_version)
+      displayName: Display build version that will be used for packages
+      
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: $(Pipeline.Workspace)/variables
+        artifactName: variables
+      displayName: Publish Build Version Artifact 
