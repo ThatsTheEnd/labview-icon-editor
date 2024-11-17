@@ -1,6 +1,4 @@
 parameters:
- pool: ''
- projectDemands: ''
  TimeoutInMinutes: ''
  LabVIEW_Version: ''
  LabVIEW_Version_B: ''
@@ -27,17 +25,12 @@ jobs:
   displayName: ${{ parameters.displayName }}
   timeoutInMinutes: ${{ parameters.TimeoutInMinutes }}
   
-  pool: 
-    name: ${{ parameters.pool }}
-    demands: ${{ parameters.projectDemands }}
-
   steps: 
   - script: if exist "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}" del /F /S /Q "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}"
     displayName: Clean up build directory
     condition: ne('$(projectPath)','')
     
-
-  - script: LabVIEWCLI -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
+  - script: cmd /c call "C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI\LabVIEWCLI.exe" -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
     displayName: LabVIEWCLI ExecuteBuildSpec
     condition: ne('$(projectPath)','')
     
