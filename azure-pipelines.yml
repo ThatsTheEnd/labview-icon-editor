@@ -44,7 +44,7 @@ steps:
 - task: BatchScript@1
   displayName: 'Execute Batch File3'
     inputs:
-      filename: '$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+      filename: "$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
       arguments: # Optional
       modifyEnvironment: False # Optional
       workingFolder: $(Build.ArtifactStagingDirectory) # Optional
