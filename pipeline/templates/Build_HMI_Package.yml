@@ -30,7 +30,7 @@ jobs:
 #    displayName: Clean up build directory
 #    condition: ne('$(projectPath)','')
     
-  - script: cmd /c call $(Agent.HomeDirectory)\bin\LabVIEWCLI.exe -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
+  - script: cmd /c call "$(Agent.HomeDirectory)\bin\LabVIEWCLI.exe" -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
     displayName: LabVIEWCLI ExecuteBuildSpec
     condition: ne('$(projectPath)','')
     
