@@ -21,6 +21,5 @@ stages:
     - task: CmdLine@2
       displayName: Deploying LVAddon
       inputs:
-       script: |
-         call buildniiconeditor64LVAddonVIPackage.bat
+       script: 'buildniiconeditor64LVAddonVIPackage.bat'
      #  workingDirectory: $(Build.SourcesDirectory)\Tooling\deployment    
