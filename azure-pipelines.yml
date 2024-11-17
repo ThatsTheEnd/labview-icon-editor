@@ -1,48 +1,22 @@
-#this pipeline needs the following:
-#Veristand 2021 R2 (Install VS First, then LV!, otherwise you won't get necessary LabVIEW libraries to interact with VS)
-###Labview 2021 SP1 
-#NIPB Version 2022 Q3 (earlier versions have a bug that prevents HMI package from running custom executes properly"
-#G-CLI Version 2.4.0.5
-#LVCLI latest 
-#openg toolkit 4.0.1.9 (for local HMI)
-#NIPM API 3.2.1.9 (from VIPM)
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 
 trigger:
 - users/svelderrain/deployment-experiment
 
-#Adjusting the build name that we see in the pipeline. BuildID is a unique number across the org
-#this is an integer to fit with the major.minor.revision where revison will become name
-name: $(Build.BuildID)
+pool:
+  vmImage: windows-latest
 
-variables:
-  LabVIEW_Version: 2021
-  LabVIEW_Version_B: 2021 --x64 #version with bitness
-  LabVIEW_Port: 3370
-  LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
-  build_id: $(Build.BuildID)
-  build_revision: $[counter('buildCounter',1)]
-  build_version: '1.0.$(Build.BuildID).$(build_revision)'
-  Run_Build_Variables: true
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
-stages:
-- stage: Build_HMI_Package 
-  jobs:
-  - template: pipeline\templates\Build_HMI_Package.yml
-    parameters:
-      displayName: LabVIEW CLI Build HMI and NIPB Build Package
-      jobName: Build_HMIexe_and_create_nipkg
-      artifactName: HMIexe 
-      TimeoutInMinutes : 10
-      relativeprojectPath: src\LabVIEW\Local_HMI\Local_HMI.lvproj
-      relativeArtifactPath: src\LabVIEW\builds\BTS Local HMI
-      nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
-      builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
-      targetName: 'My Computer'
-      LabVIEW_Version: $(LabVIEW_Version)
-      LabVIEW_Version_B: $(LabVIEW_Version_B)
-      LabVIEW_Port: $(LabVIEW_Port)
-      LabVIEW_Folder: '$(LabVIEW_Folder)'
-      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\NIPB\Local_HMI'
-      extensionFilter: '.pbs'
-      packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
-      packageVersion: $(build_version)
+- script: 
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+ - task: BatchScript@1
+  inputs:
+    filename: 'C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
