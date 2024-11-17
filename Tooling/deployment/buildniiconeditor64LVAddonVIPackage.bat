@@ -1,4 +1,4 @@
-@echo on
+@echo off
 setlocal
 set "VIServerPort=3370"
 set "RelativePath=C:\labview-icon-editor\"
@@ -12,7 +12,7 @@ cd /d C:\Program Files\NI\LVAddons
 rmdir /s /q niiconeditor64
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
-echo LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
+LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
 
 LabVIEWCLI -OperationName CloseLabVIEW -PortNumber %VIServerPort%
 
