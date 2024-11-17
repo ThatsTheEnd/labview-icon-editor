@@ -9,6 +9,8 @@ set "LabVIEWPath="C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe
 
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
+g-cli --help
+
 LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
 
 LabVIEWCLI -OperationName CloseLabVIEW -PortNumber %VIServerPort%
