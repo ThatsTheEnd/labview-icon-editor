@@ -48,7 +48,7 @@ stages:
       displayName: Write Build Version To File
     - task: CmdLine@2
       inputs:
-        script: CALL '$(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+        script: CALL $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
         
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
