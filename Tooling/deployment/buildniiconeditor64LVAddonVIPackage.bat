@@ -6,10 +6,11 @@ set "ModifyIconEditorProjectVI=Tooling\deployment\NIPackage\ModifyProjectDeployL
 set "ModifyIconEditorProjectVIPath="%RelativePath%%ModifyIconEditorProjectVI%""
 set "IconEditorBuildSpec="Editor Packed Library""
 set "LabVIEWPath="C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe""
+set "LabVIEWCLI="C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI\LabVIEWCLI.exe""
 
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
-g-cli --help
+
 
 LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
 
