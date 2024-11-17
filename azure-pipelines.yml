@@ -39,3 +39,12 @@ steps:
       } else {
           Write-Error "Batch file not found at $batchFilePath"
       }
+# Batch script
+  # Run a Windows command or batch script and optionally allow it to change the environment
+- task: BatchScript@1
+    inputs:
+      filename: 'Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+      arguments: # Optional
+      modifyEnvironment: False # Optional
+      workingFolder: $(Build.ArtifactStagingDirectory) # Optional
+      failOnStandardError: false # Optional
