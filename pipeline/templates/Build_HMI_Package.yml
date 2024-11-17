@@ -1,6 +1,4 @@
 parameters:
- pool: ''
- projectDemands: ''
  TimeoutInMinutes: ''
  LabVIEW_Version: ''
  LabVIEW_Version_B: ''
@@ -27,10 +25,6 @@ jobs:
   displayName: ${{ parameters.displayName }}
   timeoutInMinutes: ${{ parameters.TimeoutInMinutes }}
   
-  pool: 
-    name: ${{ parameters.pool }}
-    demands: ${{ parameters.projectDemands }}
-
   steps: 
   - script: if exist "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}" del /F /S /Q "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}"
     displayName: Clean up build directory

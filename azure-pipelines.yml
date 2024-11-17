@@ -64,8 +64,6 @@ stages:
   jobs:
   - template: pipeline\templates\Build_HMI_Package.yml
     parameters:
-      pool: Default
-      projectDemands: true
       displayName: LabVIEW CLI Build HMI and NIPB Build Package
       jobName: Build_HMIexe_and_create_nipkg
       artifactName: HMIexe 
