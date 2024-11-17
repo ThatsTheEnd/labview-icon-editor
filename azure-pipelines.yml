@@ -10,10 +10,6 @@
 trigger:
 - users/svelderrain/deployment-experiment
 
-pool:
-  name: "Global Services"
-  demands: "GMLOTF2022 -equals true"
-
 #Adjusting the build name that we see in the pipeline. BuildID is a unique number across the org
 #this is an integer to fit with the major.minor.revision where revison will become name
 name: $(Build.BuildID)
