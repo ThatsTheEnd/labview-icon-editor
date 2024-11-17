@@ -6,12 +6,78 @@
 trigger:
 - users/svelderrain/deployment-experiment
 
+name: $(Build.BuildID)
 pool:
-  vmImage: windows-latest
-  
-jobs:
+ vmImage: windows-latest
 
-- job: Build_Packed_Project_Library
-  displayName: I Like Turtles
-  steps: 
-  - script: g-cli --lv-ver 2021f "C:\labview-icon-editor\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe -PortNumber 3370 -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
+variables:
+  LabVIEW_Version: 2021
+  LabVIEW_Version_B: 2021 --x64 #version with bitness
+  LabVIEW_Port: 3370
+  LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
+  build_id: $(Build.BuildID)
+  build_revision: $[counter('buildCounter',1)]
+  build_version: '1.0.$(Build.BuildID).$(build_revision)'
+  Run_Build_Variables: false
+
+stages:
+- stage: Create_Build_Variables
+  condition: eq(variables.Run_Build_Variables,true)
+  jobs:
+  - job: Create_Build_Versions_Artifact
+    steps:
+    - script: 
+       echo on
+       echo $(Build.Repository.LocalPath)\Tooling\deployment\launcher.bat
+       call $(Build.Repository.LocalPath)\Tooling\deployment\launcher.bat
+      displayName: Display Repo Folder on Agent
+    - task: PowerShell@2
+      inputs:
+       filePath: '$(Build.Repository.LocalPath)\Tooling\deployment\launcher.ps1'
+    - task: PowerShellOnTargetMachines@3
+      inputs:
+        Machines: '192.168.150.137'
+        UserName: 'VM User'
+        UserPassword: '08071986'
+        InlineScript: |
+          # Write your powershell commands here.
+      
+    - powershell: |
+        mkdir $(Pipeline.Workspace)/variables -ea 0
+        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
+      displayName: Write Build Version To File
+      
+    - script: echo $(build_version)
+      displayName: Display build version that will be used for packages
+    - powershell: |
+        mkdir $(Pipeline.Workspace)/variables -ea 0
+        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
+      displayName: Write Build Version To File
+    - task: CmdLine@2
+      inputs:
+        script: CALL $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
+        
+- stage: Build_HMI_Package 
+  dependsOn: Create_Build_Variables
+  condition: succeeded()     
+
+  jobs:
+  - template: pipeline\templates\Build_HMI_Package.yml
+    parameters:
+      displayName: LabVIEW CLI Build HMI and NIPB Build Package
+      jobName: Build_HMIexe_and_create_nipkg
+      artifactName: HMIexe 
+      TimeoutInMinutes : 1
+      relativeprojectPath: .\lv_icon_editor.lvproj
+      relativeArtifactPath: Tooling\Deployment
+      nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
+      builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
+      targetName: 'My Computer'
+      LabVIEW_Version: $(LabVIEW_Version)
+      LabVIEW_Version_B: $(LabVIEW_Version_B)
+      LabVIEW_Port: $(LabVIEW_Port)
+      LabVIEW_Folder: '$(LabVIEW_Folder)'
+      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\'
+      extensionFilter: '.pbs'
+      packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
+      packageVersion: $(build_version)
