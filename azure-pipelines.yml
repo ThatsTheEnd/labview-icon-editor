@@ -20,5 +20,5 @@ stages:
        workingDirectory: $(Build.Repository.LocalPath)\Tooling\deployment
     - task: CmdLine@2
       inputs:
-       script: $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+       script: $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
        #workingDirectory: $(Build.SourcesDirectory)\Tooling\deployment    
