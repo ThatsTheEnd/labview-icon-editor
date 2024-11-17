@@ -36,3 +36,7 @@ stages:
       
     - script: echo $(build_version)
       displayName: Display build version that will be used for packages
+    - powershell: |
+        mkdir $(Pipeline.Workspace)/variables -ea 0
+        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
+      displayName: Write Build Version To File
