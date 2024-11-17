@@ -27,10 +27,11 @@ stages:
   - job: Create_Build_Versions_Artifact
     steps:
     - script: 
+       echo on
        echo $(Build.Repository.LocalPath)
        cd $(Build.Repository.LocalPath)
        echo @dir
-       RUN icacls C:\ /grant "BUILTIN\IIS_IUSRS:(OI)(CI)F" /t
+       RUN icacls "C:\Program Files (x86)\LabVIEW-CLI" /grant "BUILTIN\IIS_IUSRS:(OI)(CI)F" /t
 
       displayName: Display Repo Folder on Agent      
 
@@ -45,9 +46,9 @@ stages:
         mkdir $(Pipeline.Workspace)/variables -ea 0
         echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
       displayName: Write Build Version To File
-    - task: BatchScript@1
+    - task: CmdLine@2
       inputs:
-        filename: '$(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+        script: CALL '$(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
         
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
