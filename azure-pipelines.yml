@@ -8,7 +8,7 @@ trigger:
 
 name: $(Build.BuildID)
 pool:
- vmImage: windows-10
+ vmImage: windows-latest
 
 variables:
   LabVIEW_Version: 2021
