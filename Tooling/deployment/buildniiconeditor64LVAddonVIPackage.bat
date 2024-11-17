@@ -8,15 +8,9 @@ set "IconEditorBuildSpec="Editor Packed Library""
 set "LabVIEWPath="C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe""
 
 REM Delete built LVAddon
-C:\
-dir
-cd /d %AGENT_HOMEDIRECTORY%
-cd/
-cd Program Files (x86)\National Instruments\Shared\LabVIEW CLI
-dir
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
-LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
+call LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
 
 LabVIEWCLI -OperationName CloseLabVIEW -PortNumber %VIServerPort%
 

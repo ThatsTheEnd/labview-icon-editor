@@ -1,0 +1,98 @@
+parameters:
+ pool: ''
+ projectDemands: ''
+ TimeoutInMinutes: ''
+ LabVIEW_Version: ''
+ LabVIEW_Version_B: ''
+ LabVIEW_Port: ''
+ LabVIEW_Folder: ''
+ logFilePath: '%temp%\labviewcli_log.txt'
+ logToConsole: true
+ verbosity: Detailed
+ targetName: ''
+ buildSpecName: ''  
+ ArtifactPath: ''
+ relativeprojectPath: ''
+ nipkgsOnlyPath: ''
+ displayName: ''
+ jobName: ''
+ NIPBsLocation: ''
+  
+jobs:
+- job: "${{parameters.jobName}}"
+  variables:
+    projectPath: $(Build.Repository.LocalPath)\${{ parameters.relativeProjectPath}}
+   
+
+  displayName: ${{ parameters.displayName }}
+  timeoutInMinutes: ${{ parameters.TimeoutInMinutes }}
+  
+  pool: 
+    name: ${{ parameters.pool }}
+    demands: ${{ parameters.projectDemands }}
+
+  steps: 
+  - script: if exist "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}" del /F /S /Q "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}"
+    displayName: Clean up build directory
+    condition: ne('$(projectPath)','')
+    
+
+  - script: LabVIEWCLI -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
+    displayName: LabVIEWCLI ExecuteBuildSpec
+    condition: ne('$(projectPath)','')
+    
+  - powershell: |
+      del '${{parameters.builtPackagePath}}' -r
+      $Dir = get-childitem '${{parameters.NIPBsLocation}}' -recurse
+      $List = $Dir | where {$_.extension -eq ".pbs"}
+      Write-Host "Show all file paths with .pbs extension found"
+      $List | format-table fullname
+      $List | ForEach-Object {
+        $curFile = $_.FullName
+        Write-Host "Current File: " $curFile
+        Write-Host "Updating version and calling NI package Builder"
+        Write-Host g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\pbs-utilities\Update All Versions CLI Wrapper.vi" -- "$curFile" $(build_version)
+        g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\pbs-utilities\Update All Versions CLI Wrapper.vi" -- "$curFile" $(build_version)
+        & '${{parameters.packageBuilderLocation}}' -o="$curFile" -b=packages
+        }
+    displayName: Build HMI.nipkg    
+    
+    
+    
+  - task: DeleteFiles@1
+    inputs:
+      SourceFolder: ${{parameters.nipkgsOnlyPath}}
+      Contents: |
+         **/*
+    displayName: Clean Staging Folder
+    
+  - script: g-cli --lv-ver ${{parameters.LabVIEW_Version}} "$(Build.Repository.LocalPath)\pipeline\Tools\copy_files_with_extension(main).vi" -- *.nipkg ${{parameters.builtPackagePath}} ${{parameters.nipkgsOnlyPath}}
+    displayName: Copy only .nipkgs files to a staging folder  
+    
+  - script: echo ${{parameters.nipkgsOnlyPath}}
+    displayName: Display parameters.nipkgsOnlyPath
+      
+   # Publish the successful artifacts to pipeline
+  - task: PublishPipelineArtifact@1
+    condition: and(succeededOrFailed(),ne('${{parameters.packageLocation}}\Packages',''))
+    displayName: Publishing Packages
+    inputs:
+      targetPath: '${{parameters.nipkgsOnlyPath}}'
+      artifactName: Local_HMI_nipkg
+
+      
+  #- task: PublishPipelineArtifact@0
+    #condition: and(ne('${{parameters.projectPath}}',''),ne('${{parameters.buildSpecOutputPath}}',''))
+    #displayName: Uploading BuildSpec as Artifact
+    #inputs:
+      #artifactName: ${{parameters.artifactName}}
+      #targetPath: ${{parameters.buildSpecOutputPath}}
+ 
+ # - template: pipeline/templates/lvCliExecuteBuildSpec.yml
+ #   parameters:
+ #     projectPath: '$(Build.Repository.LocalPath)\${{parameters.relativeProjectPath}}.lvproj'
+ #     targetName: 'RT CompactRIO Target - Linux x64'  
+#  - publish: '$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}'
+
+  # Reboot Agent if job Fails.
+  #- template: pipeline\v2\src\utilities\stepTemplates\rebootAgentIfFailed.yml@srd-shared

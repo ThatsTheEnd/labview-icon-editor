@@ -1,57 +1,77 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+#this pipeline needs the following:
+#Veristand 2021 R2 (Install VS First, then LV!, otherwise you won't get necessary LabVIEW libraries to interact with VS)
+###Labview 2021 SP1 
+#NIPB Version 2022 Q3 (earlier versions have a bug that prevents HMI package from running custom executes properly"
+#G-CLI Version 2.4.0.5
+#LVCLI latest 
+#openg toolkit 4.0.1.9 (for local HMI)
+#NIPM API 3.2.1.9 (from VIPM)
+
 trigger:
-- users/svelderrain/deployment-experiment
+- main
 
 pool:
-  vmImage: 'windows-latest'
+  name: "Global Services"
+  demands: "GMLOTF2022 -equals true"
 
-steps:
-- task: CmdLine@2
-  displayName: 'Execute Batch File'
-  inputs:
-    script: |
-      REM Define the path to the batch file
-      SET BatchFilePath="$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+#Adjusting the build name that we see in the pipeline. BuildID is a unique number across the org
+#this is an integer to fit with the major.minor.revision where revison will become name
+name: $(Build.BuildID)
 
-      REM Ensure the file exists before running
-      IF EXIST "%BatchFilePath%" (
-          CALL "%BatchFilePath%"
-      ) ELSE (
-          ECHO Batch file not found at %BatchFilePath%
-          EXIT /B 1
-      )
-- task: PowerShell@2
-  displayName: 'Execute Batch File1'
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Define the path to the batch file
-      $batchFilePath = "$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat"
+variables:
+  LabVIEW_Version: 2021
+  LabVIEW_Version_B: 2021 --x64 #version with bitness
+  LabVIEW_Port: 3370
+  LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
+  build_id: $(Build.BuildID)
+  build_revision: $[counter('buildCounter',1)]
+  build_version: '1.0.$(Build.BuildID).$(build_revision)'
+  Run_Build_Variables: true
+
+stages:
+- stage: Create_Build_Variables
+  condition: eq(variables.Run_Build_Variables,true)
+  jobs:
+  - job: Create_Build_Versions_Artifact
+    steps:
+    - script: echo $(Build.Repository.LocalPath)
+      displayName: Display Repo Folder on Agent      
+
+    - powershell: |
+        mkdir $(Pipeline.Workspace)/variables -ea 0
+        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
+      displayName: Write Build Version To File
       
-      # Ensure the file exists
-      if (Test-Path $batchFilePath) {
-          # Execute the batch file
-          & $batchFilePath
-      } else {
-          Write-Error "Batch file not found at $batchFilePath"
-      }
-- task: PowerShell@2
-  displayName: 'Execute Batch File2'
-  inputs:
-    targetType: 'inline'
-    script: |
-      # Define the path to the batch file
-      $batchFilePath = "$(Build.SourcesDirectory)\Tooling\deployment\test.bat"
+    - script: echo $(build_version)
+      displayName: Display build version that will be used for packages
       
-      # Ensure the file exists
-      if (Test-Path $batchFilePath) {
-          # Execute the batch file
-          & $batchFilePath
-      } else {
-          Write-Error "Batch file not found at $batchFilePath"
-      }
-# Batch script
-  # Run a Windows command or batch script and optionally allow it to change the environment
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: $(Pipeline.Workspace)/variables
+        artifactName: variables
+      displayName: Publish Build Version Artifact 
+      
+- stage: Build_HMI_Package 
+  dependsOn: Create_Build_Variables
+  condition: succeeded()     
+
+  jobs:
+  - template: pipeline\templates\Build_HMI_Package.yml
+    parameters:
+      displayName: LabVIEW CLI Build HMI and NIPB Build Package
+      jobName: Build_HMIexe_and_create_nipkg
+      artifactName: HMIexe 
+      TimeoutInMinutes : 10
+      relativeprojectPath: src\LabVIEW\Local_HMI\Local_HMI.lvproj
+      relativeArtifactPath: src\LabVIEW\builds\BTS Local HMI
+      nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
+      builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
+      targetName: 'My Computer'
+      LabVIEW_Version: $(LabVIEW_Version)
+      LabVIEW_Version_B: $(LabVIEW_Version_B)
+      LabVIEW_Port: $(LabVIEW_Port)
+      LabVIEW_Folder: '$(LabVIEW_Folder)'
+      NIPBsLocation: '$(Build.Repository.LocalPath)\deployment\NIPB\Local_HMI'
+      extensionFilter: '.pbs'
+      packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
+      packageVersion: $(build_version)
