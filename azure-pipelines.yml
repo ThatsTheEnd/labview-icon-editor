@@ -25,28 +25,6 @@ variables:
   Run_Build_Variables: true
 
 stages:
-- stage: Create_Build_Variables
-  condition: eq(variables.Run_Build_Variables,true)
-  jobs:
-  - job: Create_Build_Versions_Artifact
-    steps:
-    - script: echo $(Build.Repository.LocalPath)
-      displayName: Display Repo Folder on Agent      
-
-    - powershell: |
-        mkdir $(Pipeline.Workspace)/variables -ea 0
-        echo $(build_version) > $(Pipeline.Workspace)/variables/build_version
-      displayName: Write Build Version To File
-      
-    - script: echo $(build_version)
-      displayName: Display build version that will be used for packages
-      
-    - task: PublishBuildArtifacts@1
-      inputs:
-        pathToPublish: $(Pipeline.Workspace)/variables
-        artifactName: variables
-      displayName: Publish Build Version Artifact 
-      
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
   condition: succeeded()     
