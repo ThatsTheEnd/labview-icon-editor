@@ -45,8 +45,8 @@ stages:
       displayName: Write Build Version To File
     - task: BatchScript@1
       inputs:
-        filename: '\Tooling\deployment\buildniiconeditor32LVAddonVIPackage.bat'
-        workingFolder: $(Build.Repository.LocalPath)
+        filename: '$(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
+        
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
   condition: succeeded()     
