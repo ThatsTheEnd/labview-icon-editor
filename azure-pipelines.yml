@@ -28,11 +28,8 @@ stages:
     steps:
     - script: 
        echo on
-       echo $(Build.Repository.LocalPath)
-       cd $(Build.Repository.LocalPath)
-       echo @dir
-       RUN icacls "C:\Program Files (x86)\LabVIEW-CLI" /grant "BUILTIN\IIS_IUSRS:(OI)(CI)F" /t
-
+       echo $(Build.Repository.LocalPath)\Tooling\deployment\launcher.bat
+       call $(Build.Repository.LocalPath)\Tooling\deployment\launcher.bat
       displayName: Display Repo Folder on Agent      
 
     - powershell: |
