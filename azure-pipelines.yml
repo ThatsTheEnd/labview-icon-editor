@@ -68,7 +68,7 @@ stages:
       jobName: Build_HMIexe_and_create_nipkg
       artifactName: HMIexe 
       TimeoutInMinutes : 10
-      relativeprojectPath: \lv_icon_editor.lvproj
+      relativeprojectPath: lv_icon_editor.lvproj
       relativeArtifactPath: Tooling\Deployment
       nipkgsOnlyPath: $(Build.Repository.LocalPath)\deployment\nipkgs\staging  #no quotes needed for this path because of the vi that uses it is made that way
       builtPackagePath: $(Build.Repository.LocalPath)\deployment\nipkgs #no quotes needed for this path because of the vi that uses it is made that way
@@ -81,3 +81,4 @@ stages:
       extensionFilter: '.pbs'
       packageBuilderLocation: 'C:\Program Files\National Instruments\Package Builder\NipbCli.exe'  
       packageVersion: $(build_version)
+      buildSpecName: 'Editor Packed Library'
