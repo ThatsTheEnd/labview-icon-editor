@@ -45,7 +45,7 @@ stages:
       displayName: Write Build Version To File
     - task: BatchScript@1
       inputs:
-        filename: 'labview-icon-editor\Tooling\deployment\buildniiconeditor32LVAddonVIPackage.bat'
+        filename: '\Tooling\deployment\buildniiconeditor32LVAddonVIPackage.bat'
         workingFolder: $(Build.Repository.LocalPath)
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
