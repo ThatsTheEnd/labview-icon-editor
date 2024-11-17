@@ -59,7 +59,7 @@ stages:
         
 - stage: Build_HMI_Package 
   dependsOn: Create_Build_Variables
-  condition: succeeded()     
+  condition: true     
 
   jobs:
   - template: pipeline\templates\Build_HMI_Package.yml
