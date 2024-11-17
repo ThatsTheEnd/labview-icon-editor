@@ -47,8 +47,8 @@ steps:
     script: |
       REM Define the path to the batch file
       SET BatchFilePath=$(Build.SourcesDirectory)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
-      "C:\Windows\system32\cmd.exe" /D /E:ON /V:OFF /S /C "CALL "%BatchFilePath%"
-      LabVIEWCLI -OperationName RunVI
+      #"C:\Windows\system32\cmd.exe" /D /E:ON /V:OFF /S /C "CALL "D:\a\_temp\8886bb57-cc81-4bab-bb8d-e5ede6a200db.cmd""
+
       REM Ensure the file exists before running
       IF EXIST "%BatchFilePath%" (
           CALL "%BatchFilePath%"

@@ -12,9 +12,9 @@ cd /d C:\Program Files\NI\LVAddons
 rmdir /s /q niiconeditor64
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
-LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
+"C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI\LabVIEWCLI.exe" -OperationName RunVI -VIPath "%RelativePath%Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE
 
-LabVIEWCLI -OperationName CloseLabVIEW -PortNumber %VIServerPort%
+"C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI\LabVIEWCLI.exe" LabVIEWCLI -OperationName CloseLabVIEW -PortNumber %VIServerPort%
 
 REM Prepare labview to use icon editor to use source code
 LabVIEWCLI -OperationName RunVI -VIPath "%RelativePath%\Tooling\Prepare LV to Use Icon Editor Source v2.vi" -LabVIEWPath %LabVIEWPath% -PortNumber %VIServerPort% -LogFilePath "C:\Users\Public\CLIlog2.txt" -Verbosity Diagnostic -LogToConsole TRUE
