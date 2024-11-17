@@ -36,9 +36,3 @@ stages:
       
     - script: echo $(build_version)
       displayName: Display build version that will be used for packages
-      
-    - task: PublishBuildArtifacts@1
-       inputs:
-         pathToPublish: $(Pipeline.Workspace)/variables
-         artifactName: variables
-       displayName: Publish Build Version Artifact 
