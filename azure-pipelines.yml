@@ -7,8 +7,6 @@ trigger:
 - users/svelderrain/deployment-experiment
 
 name: $(Build.BuildID)
-pool:
- vmImage: windows-latest
 
 variables:
   LabVIEW_Version: 2021
