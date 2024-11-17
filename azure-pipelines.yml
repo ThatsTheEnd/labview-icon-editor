@@ -19,7 +19,8 @@ stages:
        script: 'test.bat'
        workingDirectory: $(Build.Repository.LocalPath)\Tooling\deployment
     - task: CmdLine@2
+      displayName: Deploying LVAddon
       inputs:
        script: |
-       call $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
+       $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
        #workingDirectory: $(Build.SourcesDirectory)\Tooling\deployment    
