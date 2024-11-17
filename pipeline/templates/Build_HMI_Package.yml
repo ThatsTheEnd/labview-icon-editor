@@ -28,15 +28,15 @@ jobs:
   timeoutInMinutes: ${{ parameters.TimeoutInMinutes }}
   
   steps: 
-  - script: if exist "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}" del /F /S /Q "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}"
-    displayName: Clean up build directory
-    condition: ne('$(projectPath)','')
+  #- script: if exist "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}" del /F /S /Q "$(Build.Repository.LocalPath)\${{parameters.relativeArtifactPath}}"
+  #  displayName: Clean up build directory
+  #  condition: ne('$(projectPath)','')
     
 
   - script: LabVIEWCLI -LabVIEWPath "${{ parameters.LabVIEW_Folder}} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -PortNumber ${{parameters.LabVIEW_Port}} -LogFilePath "${{parameters.logFilePath}}" -LogToConsole "${{parameters.logToConsole}}" -Verbosity ${{parameters.verbosity}} -OperationName ExecuteBuildSpec -ProjectPath "$(projectPath)" -TargetName "${{parameters.targetName}}" -BuildSpecName "${{parameters.buildSpecName}}"
     displayName: LabVIEWCLI ExecuteBuildSpec
     condition: ne('$(projectPath)','')
-    
+    workingDirectory: C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI
   - powershell: |
       del '${{parameters.builtPackagePath}}' -r
       $Dir = get-childitem '${{parameters.NIPBsLocation}}' -recurse
