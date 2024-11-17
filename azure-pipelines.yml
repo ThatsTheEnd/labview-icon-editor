@@ -17,6 +17,3 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
- - task: BatchScript@1
-    inputs:
-     filename: 'C:\labview-icon-editor\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat'
