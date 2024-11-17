@@ -8,7 +8,11 @@ set "IconEditorBuildSpec="Editor Packed Library""
 set "LabVIEWPath="C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe""
 
 REM Delete built LVAddon
-cd /d C:\Program Files (x86)\National Instruments\Shared\LabVIEW CLI
+C:\
+dir
+cd /d %AGENT_HOMEDIRECTORY%
+cd/
+cd Program Files (x86)\National Instruments\Shared\LabVIEW CLI
 dir
 
 REM Create INI token localhost.LibraryPath on LabVIEW.ini that points to the development folder
