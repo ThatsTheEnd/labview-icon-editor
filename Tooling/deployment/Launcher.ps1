@@ -1,1 +1,1 @@
-.\buildniiconeditor64LVAddonVIPackage.bat
+call D:\a\1\s\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
