@@ -21,22 +21,22 @@ variables:
   Run_Build_Variables: true
 
 stages:
-- stage: I like turtles
+- stage: I_like_turtles
   condition: eq(variables.Run_Build_Variables,true)
   jobs:
   - job: Create_Build_Versions_Artifact
     steps:
-  - powershell: |
-      $subDirs = $(Get-Childitem "${{ variables.Top_Level_Path }}" -Directory)
-      Write-Host "Sub directory paths found: " $subDirs
-      $subDirs | ForEach-Object -Process {
-        $thisDir = "${{ variables.Top_Level_Path }}\" + $_
-        Write-Host "Testing subdirectory: " $thisDir
-        echo 'LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $($thisDir) $(Common.TestResultsDirectory)'
-        LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $thisDir $(Common.TestResultsDirectory)
-      } 
-    displayName: 'Unit tests in ${{ variables.Top_Level_Path }}'
-    failOnStderr: true
-    continueOnError: true
-    errorActionPreference: continue
+    - powershell: |
+        $subDirs = $(Get-Childitem "${{ variables.Top_Level_Path }}" -Directory)
+        Write-Host "Sub directory paths found: " $subDirs
+        $subDirs | ForEach-Object -Process {
+          $thisDir = "${{ variables.Top_Level_Path }}\" + $_
+          Write-Host "Testing subdirectory: " $thisDir
+          echo 'LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $($thisDir) $(Common.TestResultsDirectory)'
+          LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $thisDir $(Common.TestResultsDirectory)
+        } 
+      displayName: 'Unit tests in ${{ variables.Top_Level_Path }}'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
 
