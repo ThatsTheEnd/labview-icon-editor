@@ -208,8 +208,6 @@
 			<Item Name="Set LibraryPaths to Include Icon Editor.vi" Type="VI" URL="../../../support/Set LibraryPaths to Include Icon Editor.vi"/>
 			<Item Name="Add dev dist if present.vi" Type="VI" URL="../../../support/Add dev dist if present.vi"/>
 			<Item Name="Force Icon Editor to Unload.vi" Type="VI" URL="../../../Force Icon Editor to Unload.vi"/>
-			<Item Name="IE_Resolve Symbolic Paths.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Support/IE_Resolve Symbolic Paths.vi"/>
-			<Item Name="Get Icon Editor Context.vi" Type="VI" URL="../../../../resource/plugins/NIIconEditor/Miscellaneous/Icon Editor/Get Icon Editor Context.vi"/>
 			<Item Name="System" Type="VI" URL="System">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -219,6 +217,8 @@
 			<Item Name="libc.so.6" Type="Document" URL="libc.so.6">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Get Icon Editor Context.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Miscellaneous/Icon Editor/Get Icon Editor Context.vi"/>
+			<Item Name="IE_Resolve Symbolic Paths.vi" Type="VI" URL="/&lt;resource&gt;/plugins/NIIconEditor/Support/IE_Resolve Symbolic Paths.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="My Packed Library" Type="Packed Library">

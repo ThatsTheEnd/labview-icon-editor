@@ -27,7 +27,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\PrepareIESource.vi"
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
 
       displayName: 'Prepare labview to use icon editor to use source code'
       continueOnError: true
