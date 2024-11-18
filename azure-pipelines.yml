@@ -7,9 +7,9 @@ trigger:
 - users/svelderrain/deployment-experiment
 
 name: $(Build.BuildID)
-pool:
- vmImage: windows-latest
- demands: "iconeditor -equals true"
+pool: 
+  name: "Default"
+  demands: "iconeditor -equals true"
 
 variables:
   LabVIEW_Version: 2021
