@@ -9,6 +9,7 @@ trigger:
 name: $(Build.BuildID)
 pool:
  vmImage: windows-latest
+ demands: "iconeditor -equals true"
 
 variables:
   LabVIEW_Version: 2021
