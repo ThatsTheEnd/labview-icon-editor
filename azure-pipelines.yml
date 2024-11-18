@@ -13,7 +13,7 @@ pool:
 
 variables:
   LabVIEW_Version: 2021
-  Architecture: 64 #bitness
+  Architecture: 64
   LabVIEW_Port: 3370
   LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
   build_id: $(Build.BuildID)
@@ -28,11 +28,49 @@ stages:
     - powershell: |         
           g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
 
-      displayName: 'Create Localhost.LibraryPaths token on LabVIEW INI ${{ variables.Top_Level_Path }}'
+      displayName: 'Create Localhost.LibraryPaths token on LabVIEW INI'
       failOnStderr: true
       continueOnError: true
       errorActionPreference: continue
-    - task: CmdLine@2
-      inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\PrepareIESource.vi"
 
+      displayName: 'Prepare labview to use icon editor to use source code'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} QuitLabVIEW -- -v
+
+      displayName: 'Quit LabVIEW'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -- -v 1.1.1.1 -p "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" -b "Editor Packed Library"
+
+      displayName: 'Build the PPL'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
+
+      displayName: 'Create JSON file on LVAddon'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
+
+      displayName: 'Remove localhost flag from LabVIEW INI'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} QuitLabVIEW -- -v
+
+      displayName: 'Quit LabVIEW'
+      failOnStderr: true
+      continueOnError: true
+      errorActionPreference: continue
