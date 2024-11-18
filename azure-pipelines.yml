@@ -33,6 +33,12 @@ stages:
       continueOnError: true
     - task: CmdLine@2
       inputs:
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} QuitLabVIEW
+
+      displayName: 'Quit LabVIEW'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
         script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\PrepareIESource.vi"
 
       displayName: 'Prepare labview to use icon editor to use source code'
