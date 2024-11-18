@@ -26,13 +26,13 @@ stages:
   - job: Prepare_LabVIEW_For_Icon_Editor_Source
     steps:
     - powershell: |         
-          g-cli --lv-ver 2021 --arch $(variables.Architecture) -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
+          g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
 
-      displayName: 'Unit tests in ${{ variables.Top_Level_Path }}'
+      displayName: 'Create Localhost.LibraryPaths token on LabVIEW INI ${{ variables.Top_Level_Path }}'
       failOnStderr: true
       continueOnError: true
       errorActionPreference: continue
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch $(variables.Architecture) -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
 
