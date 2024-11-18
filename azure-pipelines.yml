@@ -13,34 +13,26 @@ pool:
 
 variables:
   LabVIEW_Version: 2021
-  LabVIEW_Version_B: 2021 --x64 #version with bitness
+  Architecture: 64 #bitness
   LabVIEW_Port: 3370
   LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
   build_id: $(Build.BuildID)
   build_revision: $[counter('buildCounter',1)]
   build_version: '1.0.$(Build.BuildID).$(build_revision)'
-  Run_Build_Variables: true
 
 stages:
-- stage: I_like_turtles
-  condition: eq(variables.Run_Build_Variables,true)
+- stage: Build_LVAddon
   jobs:
-  - job: Create_Build_Versions_Artifact
+  - job: Prepare_LabVIEW_For_Icon_Editor_Source
     steps:
-    - powershell: |
-        $subDirs = $(Get-Childitem "${{ variables.Top_Level_Path }}" -Directory)
-        Write-Host "Sub directory paths found: " $subDirs
-        $subDirs | ForEach-Object -Process {
-          $thisDir = "${{ variables.Top_Level_Path }}\" + $_
-          Write-Host "Testing subdirectory: " $thisDir
-          echo 'LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $($thisDir) $(Common.TestResultsDirectory)'
-          LabVIEWCLI -LabVIEWPath "${{ variables.LabVIEW_Folder }} ${{ variables.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\Prepare LV to Use Icon Editor Source.vi" -PortNumber ${{ variables.LabVIEW_Port }} $thisDir $(Common.TestResultsDirectory)
-        } 
+    - powershell: |         
+          g-cli --lv-ver 2021 --arch $(variables.Architecture) -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
+
       displayName: 'Unit tests in ${{ variables.Top_Level_Path }}'
       failOnStderr: true
       continueOnError: true
       errorActionPreference: continue
     - task: CmdLine@2
       inputs:
-        script: CALL $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
+        script: g-cli --lv-ver 2021 --arch $(variables.Architecture) -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi"
 
