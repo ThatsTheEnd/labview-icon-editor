@@ -27,6 +27,12 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
+
+      displayName: 'Create localhost flag from LabVIEW INI'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
         script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
 
       displayName: 'Modify project to deploy to LVAddons'
