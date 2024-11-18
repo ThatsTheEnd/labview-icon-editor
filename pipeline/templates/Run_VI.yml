@@ -1,0 +1,27 @@
+parameters:
+  Top_Level_Path: '' #this variable provides a path to the top level folder where labVIEW projects are located
+  LabVIEW_Version: ''
+  LabVIEW_Port: ''
+  LabVIEW_Folder: ''
+  Result_Name: ''
+
+jobs:
+- job: Unit_Tests
+  continueOnError: true
+  variables:
+    resultsPath: $(Common.TestResultsDirectory)
+
+  steps:
+  - powershell: |
+      $subDirs = $(Get-Childitem "${{ parameters.Top_Level_Path }}" -Directory)
+      Write-Host "Sub directory paths found: " $subDirs
+      $subDirs | ForEach-Object -Process {
+        $thisDir = "${{ parameters.Top_Level_Path }}\" + $_
+        Write-Host "Testing subdirectory: " $thisDir
+        echo 'LabVIEWCLI -LabVIEWPath "${{ parameters.LabVIEW_Folder }} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\pipeline\Shared Tests\Run Tests In Folder.vi" -PortNumber ${{ parameters.LabVIEW_Port }} $($thisDir) $(Common.TestResultsDirectory)'
+        LabVIEWCLI -LabVIEWPath "${{ parameters.LabVIEW_Folder }} ${{ parameters.LabVIEW_Version }}\LabVIEW.exe" -OperationName RunVI -VIPath "$(Build.Repository.LocalPath)\pipeline\Shared Tests\Run Tests In Folder.vi" -PortNumber ${{ parameters.LabVIEW_Port }} $thisDir $(Common.TestResultsDirectory)
+      } 
+    displayName: 'Unit tests in ${{ parameters.Top_Level_Path }}'
+    failOnStderr: true
+    continueOnError: true
+    errorActionPreference: continue
