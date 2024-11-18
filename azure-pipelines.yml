@@ -40,4 +40,7 @@ stages:
       failOnStderr: true
       continueOnError: true
       errorActionPreference: continue
+    - task: CmdLine@2
+      inputs:
+        script: CALL $(Build.Repository.LocalPath)\Tooling\deployment\buildniiconeditor64LVAddonVIPackage.bat
 
