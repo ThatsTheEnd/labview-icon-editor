@@ -27,7 +27,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- [$(Build.Repository.LocalPath)\lv_icon_editor.lvproj", "Editor Packed Library"]
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
 
       displayName: 'Modify project to deploy to LVAddons'
       continueOnError: true
@@ -61,3 +61,4 @@ stages:
 
       displayName: 'Quit LabVIEW'
       continueOnError: true
+

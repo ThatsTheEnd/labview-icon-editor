@@ -38,6 +38,7 @@
 		<Item Name="lvbuildspec.vi" Type="VI" URL="/&lt;vilib&gt;/G CLI Tools/lvbuildspec.vi"/>
 		<Item Name="PrepareIESource.vi" Type="VI" URL="../../../PrepareIESource.vi"/>
 		<Item Name="DestroyLVINILocalHostKey.vi" Type="VI" URL="../../NIPackage/DestroyLVINILocalHostKey.vi"/>
+		<Item Name="ModifyProjectDeployLVAddons.vi" Type="VI" URL="../../NIPackage/ModifyProjectDeployLVAddons.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AB_Generate_Error_Cluster.vi" Type="VI" URL="/&lt;vilib&gt;/AppBuilder/AB_Generate_Error_Cluster.vi"/>
