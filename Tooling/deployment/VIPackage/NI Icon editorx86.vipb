@@ -1,10 +1,10 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-11-13 13:58:09" Modified_Date="2024-11-18 18:22:21" Creator="svelderr" Comments="" ID="8b8c1518bcea194e803f841631a522b9">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-11-13 13:58:09" Modified_Date="2024-11-18 18:53:02" Creator="svelderr" Comments="" ID="565be6648df8bb64012f6858eae71d20">
   <Library_General_Settings>
     <Package_File_Name>NI_lib_NI_Icon_editor</Package_File_Name>
     <Library_Version>1.0.0.7</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\..\..\..\Program Files\NI\LVAddons\niiconeditor32</Library_Source_Folder>
-    <Library_Output_Folder>..\..\..\builds\lv_icon_editor</Library_Output_Folder>
+    <Library_Output_Folder>..\..\..\..\Users\Public\Documents\National Instruments</Library_Output_Folder>
     <Company_Name>NI</Company_Name>
     <Library_Summary/>
     <Library_License/>
@@ -38,7 +38,7 @@
       <Toolkit_VIs>
         <LLB>false</LLB>
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
-        <Path>&lt;OS Boot Volume Root&gt;\Program Files\NI\LVAddons</Path>
+        <Path>&lt;OS Boot Volume Root&gt;\Program Files\NI\LVAddons\niiconeditor32</Path>
       </Toolkit_VIs>
       <Examples>
         <LLB>false</LLB>
