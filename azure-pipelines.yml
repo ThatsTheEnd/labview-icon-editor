@@ -27,7 +27,7 @@ stages:
     steps:
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" "$(Build.Repository.LocalPath)"
+        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -- "$(Build.Repository.LocalPath)"
 
       displayName: 'Create localhost flag from LabVIEW INI'
       continueOnError: true
