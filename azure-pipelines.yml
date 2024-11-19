@@ -12,59 +12,100 @@ pool:
   demands: "iconeditor -equals true"
 
 variables:
-  LabVIEW_Version: 2021
-  Architecture: 64
-  LabVIEW_Port: 3370
-  LabVIEW_Folder: C:\Program Files\National Instruments\LabVIEW
   build_id: $(Build.BuildID)
   build_revision: $[counter('buildCounter',1)]
   build_version: '1.0.$(Build.BuildID).$(build_revision)'
 
 stages:
-- stage: Build_LVAddon
+- stage: Build_LVAddon_x86
   jobs:
   - job: Build_PPL
     steps:
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" $(Build.Repository.LocalPath)
+        script: g-cli --lv-ver 2021 --arch 32 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -- "$(Build.Repository.LocalPath)"
 
       displayName: 'Create localhost flag from LabVIEW INI'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
+        script: g-cli --lv-ver 2021 --arch 32 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
 
       displayName: 'Modify project to deploy to LVAddons'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: call g-cli --lv-ver 2021 --arch ${{variables.Architecture}} QuitLabVIEW -- -v
+        script: call g-cli --lv-ver 2021 --arch 32 QuitLabVIEW -- -v
 
       displayName: 'Quit LabVIEW'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} lvbuildspec -- -v 1.1.1.1 -p "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" -b "Editor Packed Library"
+        script: g-cli --lv-ver 2021 --arch 32 lvbuildspec -- -v 1.1.1.1 -p "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" -b "Editor Packed Library"
 
       displayName: 'Build the PPL'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVAddonJSONfile.vi"
+        script: g-cli --lv-ver 2021 --arch 32 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVAddonJSONfile.vi"
 
       displayName: 'Create JSON file on LVAddon'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: g-cli --lv-ver 2021 --arch ${{variables.Architecture}} -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
+        script: g-cli --lv-ver 2021 --arch 32 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
 
       displayName: 'Remove localhost flag from LabVIEW INI'
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script:  g-cli --lv-ver 2021 --arch ${{variables.Architecture}} QuitLabVIEW -- -v
+        script:  g-cli --lv-ver 2021 --arch 32 QuitLabVIEW -- -v
 
       displayName: 'Quit LabVIEW'
       continueOnError: true
+- stage: Build_LVAddon_x64
+  jobs:
+  - job: Build_PPL
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -- "$(Build.Repository.LocalPath)"
 
+      displayName: 'Create localhost flag from LabVIEW INI'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\ModifyProjectDeployLVAddons.vi" -- "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" "Editor Packed Library"
+
+      displayName: 'Modify project to deploy to LVAddons'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: call g-cli --lv-ver 2021 --arch 64 QuitLabVIEW -- -v
+
+      displayName: 'Quit LabVIEW'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 lvbuildspec -- -v 1.1.1.1 -p "$(Build.Repository.LocalPath)\lv_icon_editor.lvproj" -b "Editor Packed Library"
+
+      displayName: 'Build the PPL'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVAddonJSONfile.vi"
+
+      displayName: 'Create JSON file on LVAddon'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
+
+      displayName: 'Remove localhost flag from LabVIEW INI'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script:  g-cli --lv-ver 2021 --arch 64 QuitLabVIEW -- -v
+
+      displayName: 'Quit LabVIEW'
+      continueOnError: true
