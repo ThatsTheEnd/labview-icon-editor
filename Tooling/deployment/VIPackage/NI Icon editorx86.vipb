@@ -1,9 +1,9 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-11-13 13:58:09" Modified_Date="2024-11-15 13:21:37" Creator="svelderr" Comments="" ID="03dc0a219ec4fbfbd316ebd501cf6b50">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2024-11-13 13:58:09" Modified_Date="2024-11-18 18:22:21" Creator="svelderr" Comments="" ID="8b8c1518bcea194e803f841631a522b9">
   <Library_General_Settings>
     <Package_File_Name>NI_lib_NI_Icon_editor</Package_File_Name>
-    <Library_Version>1.0.0.6</Library_Version>
+    <Library_Version>1.0.0.7</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
-    <Library_Source_Folder>..\..\..\..\Program Files\NI\LVAddons\niiconeditor64</Library_Source_Folder>
+    <Library_Source_Folder>..\..\..\..\Program Files\NI\LVAddons\niiconeditor32</Library_Source_Folder>
     <Library_Output_Folder>..\..\..\builds\lv_icon_editor</Library_Output_Folder>
     <Company_Name>NI</Company_Name>
     <Library_Summary/>
@@ -25,7 +25,7 @@
       <Pre-Uninstall_VI/>
       <Post-Uninstall_VI>Install Support_Post-Uninstall Custom Action.vi</Post-Uninstall_VI>
     </Custom_Action_VIs>
-    <VI_Package_Configuration_File>NI Icon editor.vipc</VI_Package_Configuration_File>
+    <VI_Package_Configuration_File>NI Icon editorx86.vipc</VI_Package_Configuration_File>
     <Description>
       <One_Line_Description_Summary/>
       <Description/>
@@ -107,12 +107,6 @@
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
       </Destination_Overrides>
-      <Destination_Overrides>
-        <Path>1</Path>
-        <Destination>0</Destination>
-        <Additional_Destination>false</Additional_Destination>
-        <Additional_Destination_Index>0</Additional_Destination_Index>
-      </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
         <Password/>
@@ -179,7 +173,7 @@
       <OS_32-Bit>true</OS_32-Bit>
       <OS_64-Bit>true</OS_64-Bit>
       <LV_32-Bit>true</LV_32-Bit>
-      <LV_64-Bit>true</LV_64-Bit>
+      <LV_64-Bit>false</LV_64-Bit>
     </Install_Requirements>
     <LabVIEW>
       <close_labview_before_install>true</close_labview_before_install>

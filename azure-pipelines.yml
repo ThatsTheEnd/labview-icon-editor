@@ -59,6 +59,18 @@ stages:
       continueOnError: true
     - task: CmdLine@2
       inputs:
+        script: g-cli --lv-ver 2021 --arch 32 -v vipb -- -av -b "C:\labview-icon-editor\Tooling\deployment\VIPackage\NI Icon editorx86.vipb"
+        
+      displayName: 'Build VI Package'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 32 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\DestroyLVINILocalHostKey.vi"
+
+      displayName: 'Remove localhost flag from LabVIEW INI'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
         script:  g-cli --lv-ver 2021 --arch 32 QuitLabVIEW -- -v
 
       displayName: 'Quit LabVIEW'
@@ -96,6 +108,12 @@ stages:
         script: g-cli --lv-ver 2021 --arch 64 -v "$(Build.Repository.LocalPath)\Tooling\deployment\NIPackage\CreateLVAddonJSONfile.vi"
 
       displayName: 'Create JSON file on LVAddon'
+      continueOnError: true
+    - task: CmdLine@2
+      inputs:
+        script: g-cli --lv-ver 2021 --arch 64 -v vipb -- -av -b "C:\labview-icon-editor\Tooling\deployment\VIPackage\NI Icon editorx64.vipb"
+        
+      displayName: 'Build VI Package'
       continueOnError: true
     - task: CmdLine@2
       inputs:
