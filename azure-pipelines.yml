@@ -59,7 +59,7 @@ stages:
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: call g-cli --lv-ver 2021 --arch 32 -v vipb -- -av -b "C:\labview-icon-editor\Tooling\deployment\VIPackage\NI Icon editorx86.vipb"
+        script: call g-cli --lv-ver 2021 --arch 32 -v vipb -- -av -b "$(Build.Repository.LocalPath)\Tooling\deployment\VIPackage\NI Icon editorx86.vipb"
         
       displayName: 'Build VI Package'
       continueOnError: true
@@ -111,7 +111,7 @@ stages:
       continueOnError: true
     - task: CmdLine@2
       inputs:
-        script: call g-cli --lv-ver 2021 --arch 64 -v vipb -- -av -b "C:\labview-icon-editor\Tooling\deployment\VIPackage\NI Icon editorx64.vipb"
+        script: call g-cli --lv-ver 2021 --arch 64 -v vipb -- -av -b "$(Build.Repository.LocalPath)\Tooling\deployment\VIPackage\NI Icon editorx64.vipb"
         
       displayName: 'Build VI Package'
       continueOnError: true
