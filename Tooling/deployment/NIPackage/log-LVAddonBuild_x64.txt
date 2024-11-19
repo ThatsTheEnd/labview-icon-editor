@@ -1,7 +1,0 @@
-[3:43:47.75 PM] Solution log file opened: C:\labview-icon-editor\Tooling\deployment\NIPackage\log-LVAddonBuild_x64.txt
-[3:43:47.75 PM] System summary
-   Date               11/16/2024 15:43:47
-   NIPB version       23.8.0.2508
-   NIPB bitness       64-bit
-   NIPM version       24.8.0.49279
-   Operating System   Windows 11 64-bit

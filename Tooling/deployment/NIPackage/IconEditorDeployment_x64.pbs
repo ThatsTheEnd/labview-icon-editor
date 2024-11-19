@@ -3,70 +3,99 @@
     <SourceItems>
         <SourceItem z:Id="i2">
             <PluginConfigurationOptions />
-            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64</RelativePath>
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json</RelativePath>
             <DependentItems />
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
+        <SourceItem z:Id="i3">
+            <PluginConfigurationOptions />
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</RelativePath>
+            <DependentItems />
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
+        <SourceItem z:Id="i4">
+            <PluginConfigurationOptions />
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins</RelativePath>
+            <DependentItems>
+                <SourceItem z:Ref="i3" />
+            </DependentItems>
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
+        <SourceItem z:Id="i5">
+            <PluginConfigurationOptions />
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource</RelativePath>
+            <DependentItems>
+                <SourceItem z:Ref="i4" />
+            </DependentItems>
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
+        <SourceItem z:Id="i6">
+            <PluginConfigurationOptions />
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1</RelativePath>
+            <DependentItems>
+                <SourceItem z:Ref="i2" />
+                <SourceItem z:Ref="i5" />
+            </DependentItems>
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
+        <SourceItem z:Id="i7">
+            <PluginConfigurationOptions />
+            <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64</RelativePath>
+            <DependentItems>
+                <SourceItem z:Ref="i6" />
+            </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
     </SourceItems>
     <InputSourceItems>
-        <SourceItem z:Ref="i2" />
+        <SourceItem z:Ref="i7" />
     </InputSourceItems>
     <Distributions>
-        <Distribution z:Id="i3" i:type="Package">
+        <Distribution z:Id="i8" i:type="Package">
             <DistributionItems>
-                <DistributionItem z:Id="i4" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i9" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI</DestinationRelativePath>
                     <Name>NI</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i5" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i10" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64</DestinationRelativePath>
                     <Name>niiconeditor64</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i6" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i11" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1</DestinationRelativePath>
                     <Name>1</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i7" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i12" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource</DestinationRelativePath>
                     <Name>resource</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i8" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i13" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins</DestinationRelativePath>
                     <Name>plugins</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i9" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i14" i:type="DistributionFileItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json</DestinationRelativePath>
                     <Name>lvaddoninfo.json</Name>
-                    <SourceItem z:Id="i10">
-                        <PluginConfigurationOptions />
-                        <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\lvaddoninfo.json</RelativePath>
-                        <DependentItems />
-                        <IsDiscoverable>true</IsDiscoverable>
-                    </SourceItem>
+                    <SourceItem z:Ref="i2" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>false</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i11" i:type="DistributionFileItem">
-                    <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</DestinationRelativePath>
-                    <Name>lv_icon.lvlibp</Name>
-                    <SourceItem z:Id="i12">
-                        <PluginConfigurationOptions />
-                        <RelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</RelativePath>
-                        <DependentItems />
-                        <IsDiscoverable>true</IsDiscoverable>
-                    </SourceItem>
-                    <PluginConfigurationOptions />
-                    <ProcessDuringStaging>false</ProcessDuringStaging>
-                </DistributionItem>
-                <DistributionItem z:Id="i13" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i15" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons</DestinationRelativePath>
                     <Name>LVAddons</Name>
                     <SourceItem i:nil="true" />
+                </DistributionItem>
+                <DistributionItem z:Id="i16" i:type="DistributionFileItem">
+                    <DestinationRelativePath>[Program Files (64-bit)]\NI\LVAddons\niiconeditor64\1\resource\plugins\lv_icon.lvlibp</DestinationRelativePath>
+                    <Name>lv_icon.lvlibp</Name>
+                    <SourceItem z:Ref="i3" />
+                    <PluginConfigurationOptions />
+                    <ProcessDuringStaging>false</ProcessDuringStaging>
                 </DistributionItem>
             </DistributionItems>
             <Name>NI Icon editor x64</Name>
@@ -75,27 +104,16 @@
             <PrebuildAnalysisEnabled>true</PrebuildAnalysisEnabled>
             <Architecture>windows_x64</Architecture>
             <AutoIncrementVersion>Build</AutoIncrementVersion>
-            <BuildStatus z:Id="i14">
+            <BuildStatus z:Id="i17">
                 <BuildEverSuccessful>true</BuildEverSuccessful>
-                <FileName>ni-iconeditor-x64_1.0.0.16_windows_x64.nipkg</FileName>
-                <Version>1.0.0.16</Version>
+                <FileName>ni-iconeditor-x64_1.0.0.20_windows_x64.nipkg</FileName>
+                <Version>1.0.0.20</Version>
             </BuildStatus>
             <CompanyName>MyCompany</CompanyName>
-            <CustomExecutes>
-                <CustomExecute z:Id="i15">
-                    <Arguments>/c LabVIEWCLI -OperationName RunVI -VIPath "C:\labview-icon-editor\Tooling\deployment\NIPackage\Post uninstall.vi" -LabVIEWPath "C:\Program Files\National Instruments\LabVIEW 2021\LabVIEW.exe" -PortNumber 3370 -LogFilePath "C:\Users\Public\CLIlog1.txt" -Verbosity Diagnostic -LogToConsole TRUE</Arguments>
-                    <ExeName>cmd.exe</ExeName>
-                    <HideConsoleWindow>false</HideConsoleWindow>
-                    <IgnoreErrors>false</IgnoreErrors>
-                    <RootLogicalName>[System (64-bit)]</RootLogicalName>
-                    <Schedule>Post</Schedule>
-                    <Step>Uninstall</Step>
-                    <Wait>true</Wait>
-                </CustomExecute>
-            </CustomExecutes>
-            <Description>Deploys lv_icon.lvlibp to LVAddons</Description>
+            <CustomExecutes />
+            <Description>Deploys lv_icon.lvlibp to LVAddons x64</Description>
             <DisplayName>NI Icon editor x64</DisplayName>
-            <FileName>ni-iconeditor-x64_1.0.0.17_windows_x64.nipkg</FileName>
+            <FileName>ni-iconeditor-x64_1.0.0.21_windows_x64.nipkg</FileName>
             <MaintainerEmail>support@ni.com</MaintainerEmail>
             <MaintainerName>NI</MaintainerName>
             <Messages xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -105,14 +123,14 @@
             <Section>Add-Ons</Section>
             <StoreProduct>true</StoreProduct>
             <Synopsis>ni-iconeditor-x64</Synopsis>
-            <Version>1.0.0.17</Version>
+            <Version>1.0.0.21</Version>
         </Distribution>
     </Distributions>
     <Feeds />
     <DistributionGroups>
-        <DistributionGroup z:Id="i16">
+        <DistributionGroup z:Id="i18">
             <Distributions>
-                <Distribution z:Ref="i3" />
+                <Distribution z:Ref="i8" />
             </Distributions>
             <Name>Distribution Group</Name>
             <PrebuildAnalysisEnabled>true</PrebuildAnalysisEnabled>
@@ -121,59 +139,59 @@
     </DistributionGroups>
     <TestStandMode>true</TestStandMode>
     <PluginConfigurationOptions>
-        <ConfigurationOption z:Id="i17">
-            <Definition z:Id="i18">
+        <ConfigurationOption z:Id="i19">
+            <Definition z:Id="i20">
                 <Description i:nil="true" />
                 <Name>TestStand Options</Name>
             </Definition>
             <HasDefaultValues>true</HasDefaultValues>
-            <Value z:Id="i19" i:type="DialogConfigurationOptionValue">
+            <Value z:Id="i21" i:type="DialogConfigurationOptionValue">
                 <Values>
-                    <ConfigurationOptionValue z:Id="i20" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i21" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i22" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i23" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i23" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i24" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i25" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i24" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i26" i:type="StringConfigurationOptionValue">
                         <Value>SupportVIs</Value>
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i25" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i26" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i27" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i28" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i27" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i28" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i29" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i30" i:type="BooleanConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i30" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i31" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i32" i:type="BooleanConfigurationOptionValue">
                         <Value>true</Value>
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i31" i:type="BooleanConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i33" i:type="BooleanConfigurationOptionValue">
                         <Value>true</Value>
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i32" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i33" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i34" i:type="PathConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i34" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i35" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i36" i:type="PathConfigurationOptionValue">
                         <RelativePath />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i35" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i36" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i37" i:type="StringConfigurationOptionValue">
-                        <Value>[BootVolume]</Value>
-                    </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i38" i:type="StringConfigurationOptionValue">
-                        <Value />
-                    </ConfigurationOptionValue>
+                    <ConfigurationOptionValue z:Id="i37" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i38" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i39" i:type="StringConfigurationOptionValue">
-                        <Value />
+                        <Value>[BootVolume]</Value>
                     </ConfigurationOptionValue>
                     <ConfigurationOptionValue z:Id="i40" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i41" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i42" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i41" i:type="StringConfigurationOptionValue">
+                        <Value />
+                    </ConfigurationOptionValue>
+                    <ConfigurationOptionValue z:Id="i42" i:type="StringConfigurationOptionValue">
+                        <Value />
+                    </ConfigurationOptionValue>
                     <ConfigurationOptionValue z:Id="i43" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i44" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i45" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i46" i:type="BooleanConfigurationOptionValue" />
                 </Values>
             </Value>
         </ConfigurationOption>
