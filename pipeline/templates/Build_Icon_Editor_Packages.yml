@@ -57,7 +57,7 @@ jobs:
      script: call g-cli --lv-ver ${{parameters.LVVersion}} --arch ${{parameters.SupportedBitness}} QuitLabVIEW
     displayName: Quit LabVIEW
  
- - task: CmdLine@2
+  - task: CmdLine@2
     inputs:    
      script: call g-cli --lv-ver ${{parameters.LVVersion}} --arch ${{parameters.SupportedBitness}} -v "$(Build.Repository.LocalPath)\Tooling\PrepareIESource.vi" -- "${{parameters.Project}}" "Editor Packed Library"
     displayName: Zips and moves lv_icon.lvlibp as well as LabVIEW Icon API from VI Lib to a different location
