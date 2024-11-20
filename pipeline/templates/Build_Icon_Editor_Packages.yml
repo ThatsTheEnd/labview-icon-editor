@@ -79,7 +79,9 @@ jobs:
   
   - task: CmdLine@2
     inputs:
-     script: call nipbcli -o="${{parameters.NIPB_Path}} -b=packages -save
+     script: 
+     cd /d C:\Program Files\National Instruments\Package Builder 
+     call nipbcli -o="${{parameters.NIPB_Path}}" -b=packages -save
      workingDirectory: "C:\Program Files\National Instruments\Package Builder"
     displayName: Build NI Package
     
