@@ -14,8 +14,6 @@ set "PackedProjectLibraryVersion=1.0.1.0"
 REM Delete any previously built LV Addons
 cd /d C:\Program Files\NI\LVAddons
 rmdir /s /q %AddonName%
-REM Apply CI/CD dependencies
-call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% vipc -- "%RelativePath%\Tooling\deployment\Dependencies.vipc"
 REM Add Localhost.LibraryPaths token to LabVIEW INI
 call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% -v "%RelativePath%\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -- %RelativePath%
 REM Quit LabVIEW
