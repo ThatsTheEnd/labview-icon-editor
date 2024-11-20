@@ -72,7 +72,7 @@ jobs:
      script: call g-cli --lv-ver ${{parameters.LVVersion}} --arch ${{parameters.SupportedBitness}} QuitLabVIEW
     displayName: Quit LabVIEW
   
-  -  task: CmdLine@2
+  - task: CmdLine@2
     inputs:
      script: call g-cli --lv-ver ${{parameters.LVVersion}} --arch ${{parameters.SupportedBitness}} lvbuildspec -- -v ${{parameters.PackedProjectLibraryVersion}} -p "${{parameters.Project}}" -b "${{parameters.BuildSpec}}"
     displayName: Build the PPL
