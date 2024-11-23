@@ -17,6 +17,9 @@ set "VIPackageLabVIEWVersion=2024"
 REM Delete any previously built LV Addons
 cd /d C:\Program Files\NI\LVAddons
 rmdir /s /q %AddonName%
+REM Apply dependencies
+call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% -v vipc -- ""%RelativePath%\Tooling\deployment\Dependencies.vipc"
+IF %ERRORLEVEL% NEQ 0 goto end
 REM Add Localhost.LibraryPaths token to LabVIEW INI
 call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% -v "%RelativePath%\Tooling\deployment\NIPackage\CreateLVINILocalHostKey.vi" -- %RelativePath%
 IF %ERRORLEVEL% NEQ 0 goto end
@@ -30,7 +33,7 @@ REM Quit LabVIEW
 call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% QuitLabVIEW
 IF %ERRORLEVEL% NEQ 0 goto end
 REM Run Unit tests
-call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% -v "%RelativePath%\Tooling\Run all tests CLI.vi" -- "
+call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% -v "%RelativePath%\Tooling\Run all tests CLI.vi"
 IF %ERRORLEVEL% NEQ 0 goto end
 REM Build the PPL
 call g-cli --lv-ver %LVVersion% --arch %SupportedBitness% lvbuildspec -- -v %PackedProjectLibraryVersion% -p "%Project%" -b "%BuildSpec%"
